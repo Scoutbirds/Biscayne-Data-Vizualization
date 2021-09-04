@@ -1,4 +1,4 @@
-(Biscayne.jpg)
+![Biscayne Picture](Biscayne.jpg)
 
 # Biscayne-Data-Vizualization
 This interdisciplinary project for the FIU Institute of Environment, aims to create an information visualization website to communicate the nuanced nature of Biscayne Bay water quality to the general public. This website will contain four types of information:
