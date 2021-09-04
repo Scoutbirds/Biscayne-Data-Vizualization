@@ -15,3 +15,7 @@ As it is an interdisciplinary project, you will be working with a design team an
 Joshua Fernandez <br />
 Jorge Leon <br />
 Julian Gasteli <br />
+Eduardo Cortes <br />
+Daniel Chevez <br />
+Daniel Navarro <br />
+
