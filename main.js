@@ -1,12 +1,14 @@
 // Mapbox instantiation
-mapboxgl.accessToken = 'pk.eyJ1IjoiamZlcm4wNzUiLCJhIjoiY2t0MnpuaXphMHNpMzJ1bnhjeWlxNTQ5MyJ9.o1NOIZ1hRvQcXmR7jxAtLQ';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2NvdXRiaXJkcyIsImEiOiJja3Q5ZWl1bmcxYmVqMnBuenduejVvNTdiIn0.YP8oU2KJ4nrwd5IdPIo3XQ';
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/jfern075/ckt5s06110bdx17nk6tcacn53', // style URL
+    style: 'mapbox://styles/scoutbirds/ckt9elngu170217qnwoed80vx', // style URL
     center: [-80.149, 25.848], // starting position [lng, lat]
     zoom: 12.74 // starting zoom
 });
 
+
+if(x=1);
 
 // Buoy 1
 const coralGables = new mapboxgl.Marker()
@@ -22,3 +24,9 @@ const northBiscayneBay = new mapboxgl.Marker()
 const littleRiver = new mapboxgl.Marker()
     .setLngLat([-80.176921, 25.846346])
     .addTo(map);
+
+
+
+
+
+
