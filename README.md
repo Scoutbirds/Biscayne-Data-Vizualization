@@ -18,4 +18,7 @@ Julian Gasteli <br />
 Eduardo Cortes <br />
 Daniel Chevez <br />
 Daniel Navarro <br />
+Rachel Roig <br />
+David Llerena <br />
+Anthony Castillo <br />
 
