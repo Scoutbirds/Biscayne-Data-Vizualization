@@ -7,6 +7,7 @@ center: [-80.15, 25.85], // starting position [lng, lat]
 zoom: 12, // starting zoom
 });
 map.addControl(new mapboxgl.NavigationControl());
+map.scrollZoom.disable();
 
 
 
@@ -37,7 +38,7 @@ TempButton.addEventListener("click", function()
     map.setPaintProperty("pH", "circle-opacity", 0);
 
 
-    document.querySelector('#gradient').classList.add('hello');
+    document.querySelector('#gradient').classList.add('gradient2');
 } )
 
 pHButton.addEventListener("click", function()
