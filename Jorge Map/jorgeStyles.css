@@ -1,0 +1,93 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+.mapcontainer{
+    top: 0;
+    bottom: 0;
+    height: 600px;
+    background-color: #86ec82;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#map {
+  top: 0;
+  bottom: 0;
+  height: 600px;
+  width: 85%;
+  float: left;
+}
+
+.optionsContainer{
+  height: 150px;
+    position: relative;
+}
+
+.optionbuttons{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(0, 0, 0);
+  width: 15%;
+  display:Block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 31px 0px;
+  transition-duration: 0.3s;
+}
+
+
+
+
+.optionbuttons:hover{
+  background-color: #1d1f27;
+  color: rgb(255, 255, 255);
+  cursor:pointer;
+}
+
+.optionbuttons:focus{
+  background-color: #1d1f27;
+  color: rgb(255, 255, 255);
+  cursor:pointer;
+}
+
+
+.info{
+  padding: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  width: 50%;
+  margin: 10px 25%;
+}
+
+.Title{
+  font-family:sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.gradient{
+  height:20px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
+  margin-left: 5%;
+  margin-right: 15%;
+
+}
+
+.gradient2{
+  height:20px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(139, 135, 228) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
+  margin-left: 5%;
+  margin-right: 15%;
+
+}
