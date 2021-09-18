@@ -8,11 +8,46 @@ body {
 
 
 #map {
-    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 700px;
+    width: 80%;
+    float: left;
+}
+
+.mapcontainer{
     top: 0;
     bottom: 0;
     height: 700px;
     width: 100%;
+    background-color: #86ec82;
+    position: relative;
+}
+
+.optionsContainer{
+  height: 150px;
+    width: 100%;
+    position: relative;
+}
+
+.optionbuttons{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 20px 40px;
+  width: 20%;
+  display:Block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  transition-duration: 0.3s;
+}
+
+
+.optionbuttons:hover{
+  background-color: #1d1f27;
+  color: rgb(255, 255, 255);
+  cursor:pointer;
 }
 
 
@@ -31,6 +66,8 @@ height: 10px;
 width: 100%;
 background: linear-gradient(to left,#ff1a1a, #fff41f, #21ff1a);
 }
+
+
 
 .map-overlay .map-overlay-inner {
   background-color: #fff;
