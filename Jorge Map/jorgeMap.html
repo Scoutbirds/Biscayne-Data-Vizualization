@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>CREST MAP</title>
+    <title>Biscayne visualizations</title>
     <meta
-      name="viewport"
+      name="viewport" 
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
@@ -18,7 +18,48 @@
 
   </head>
   <body>
-    <p class = "Title">BISCAYNE DATA VISUALIZATIONS</p>
+
+    <!-- <div class="navbar">
+      <div class="FIU">Florida International University</div>
+      <div class="Bis">Biscayne Bay</div>
+    </div> -->
+    
+    <div class="firstpage">
+      <div class ="firstmessage">
+        <div>
+          Biscayne<br>Visualization
+        </div>
+        <button id = "mapbutton">Map</button>
+      </div>
+      <!-- <img id = "image" src="WaterPicture.jpg"> -->
+    </div>
+
+
+    <div class = "biscayne">
+      <p class = "Title">BISCAYNE BAY DATA</p>
+      <div class="info">
+        <p>
+          As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization 
+          and climate change have all contributed to the precipitous decline of our iconic bay. 
+          <br>
+          <br>
+          This August 2020, the bay experienced an obvious sign of distress. Several reports of fish kills, followed by algal blooms, were seen throughout the waterway. 
+          Our scientists responded urgently to this call. 
+          <br>
+          <br>
+          We are aggregating all of the data and information that is being collected and about Biscayne Bay on this page. Here you can find datsets and data visualizations 
+          collected and developed by FIU scientists, as well as by partner organizations that are striving to restore Biscayne Bay to the healthy and thriving waterway it once was. 
+          We hope to make this data available to all so that anyone can help us restore, protect and fight to save our bay.
+        </p>
+      </div>
+      <p class = "Title">DATA VISUALIZATIONS</p>
+      <div class="info">
+        <p>
+          The Institute of Environment's data visualization team has developed an interactive map and application that allows users to explore the data about Biscayne Bay.
+        </p>
+      </div>
+    </div>
+  
 
     <div class = "mapcontainer">
       <div id ="map"></div>
@@ -33,27 +74,7 @@
     </div>
 
     <div>
-      <div id = "gradient"class="gradient"></div>
-    </div>
-
-
-
-    <div class="info">
-      <p>
-        As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization 
-        and climate change have all contributed to the precipitous decline of our iconic bay. 
-      </p>
-
-      <p >
-        This August 2020, the bay experienced an obvious sign of distress. Several reports of fish kills, followed by algal blooms, were seen throughout the waterway. 
-        Our scientists responded urgently to this call. 
-      </p>
-
-      <p> 
-        We are aggregating all of the data and information that is being collected and about Biscayne Bay on this page. Here you can find datsets and data visualizations 
-        collected and developed by FIU scientists, as well as by partner organizations that are striving to restore Biscayne Bay to the healthy and thriving waterway it once was. 
-        We hope to make this data available to all so that anyone can help us restore, protect and fight to save our bay.
-      </p>
+      <!--<div id = "gradient"class="gradient"></div>-->
     </div>
 
     <script src = "jorgeScript.js"></script>
