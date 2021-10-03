@@ -4,39 +4,28 @@ blue       #081E3F
 gold       #FFCC00
 */
 
-/* default */
-body { 
-  margin: 0; 
-  padding: 0; 
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* mapbox map */
-#map { 
-  position: absolute; 
-  top: 0; 
-  bottom: 0; 
-  width: 100%; 
-}
-
-/* position the navbar container inside */
-.container {
+/* layer console */
+#mapConsole {
   position: absolute;
-  margin: 15px;
   width: auto;
+  margin: 10px;
+  padding: 0px;
+  top: 60px;
+  left: 5px;
   z-index: 1;
+  display: none;
 }
 
-/* the navbar */
-.topnav {
+/* items */
+.items {
   overflow: hidden;
   background-color: #081E3F;
   color: white;
   border-radius: 5px;
 }
 
-/* navbar links */
-.topnav a {
+/* items a */
+.items a {
   float: left;
   color: white;
   text-align: center;
@@ -45,8 +34,8 @@ body {
   font-size: 17px;
 }
 
-/* nav links on hover */
-.topnav a:hover {
+/* items a when hover */
+.items a:hover {
   background-color: white;
   color: #081E3F;
 }

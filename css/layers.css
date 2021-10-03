@@ -1,43 +1,47 @@
-/*
-FIU colors
-blue       #081E3F
-gold       #FFCC00
-*/
-
-/* layer console */
-#layerConsole {
+#mapKeyLegend {
   position: absolute;
-  width: auto;
   margin: 10px;
+  width: 200px;
+  background-color: white;
   padding: 0px;
-  background-color: #081E3F;
-  color: white;
+  padding-top: 15px;
   top: 60px;
   left: 5px;
   z-index: 1;
+  border-radius: 5px;
   display: none;
 }
 
-/* items */
-.items {
-  overflow: hidden;
-  background-color: #081E3F;
-  color: white;
+.dropDownList {
+  margin-bottom: 10px;
+  padding-left: 15px;
 }
 
-/* items a */
-.items a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.gradContainer {
+  padding: 0px;
+  margin: 15px;
+} 
+
+.row {
+  width: 100%;
+  display: inline-block;
+  padding: 5px;
 }
 
-/* items a when hover */
-.items a:hover {
-  background-color: white;
-  color: #081E3F;
+.label {
+  display: inline;
 }
 
+.label p {
+  display: inline;
+  padding-left: 15px;
+  font-size: 22px;
+}
+
+.gradBox {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 25px;
+  border: 1px solid black;
+}
