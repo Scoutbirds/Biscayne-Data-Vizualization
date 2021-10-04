@@ -29,7 +29,6 @@
   font-weight: bold;
   float: left;
   text-align: center;
-  color: rgb(255, 255, 255);
   padding-top: 10px;
   margin-left: 50px;
 
@@ -37,7 +36,6 @@
 
 .firstpage{
   height: 900px;
-  background-color: rgb(226, 235, 240);
   background-image: url("oceand.jpg");
   background-repeat: no-repeat, repeat;
   background-size: 1920px;
@@ -89,26 +87,23 @@
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+  text-decoration: underline;
 }
 
 .info{
   padding-bottom: 50px;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 20px;
-  width: 45%;
-  margin: 0% 27.5%;
+  width: 60%;
+  margin: 0% 20%;
   line-height: 1.5;
+  
 }
-
-
-
 
 body {
     margin: 0;
     padding: 0;
   }
-
-
 
 .mapcontainer{
     top: 0;
@@ -116,7 +111,7 @@ body {
     height: 600px;
     position: relative;
     padding-bottom: 10%;
-    padding-top: 10%;
+    padding-top: 2%;
     background-color: rgb(255, 255, 255);
 }
 
@@ -149,9 +144,6 @@ body {
   transition-duration: 0.3s;
 }
 
-
-
-
 .optionbuttons:hover{
   background-color: #1d1f27;
   color: rgb(255, 255, 255);
@@ -163,9 +155,6 @@ body {
   color: rgb(255, 255, 255);
   cursor:pointer;
 }
-
-
-
 
 .gradient{
   height:20px;
@@ -185,4 +174,47 @@ body {
 
 }
 
+.information{
+  height: 500px;
+  margin: 2% 0%;
+}
+
+.informationBox{
+  border-radius: 5px;
+  float:left;
+  width: 40%;
+  height: 350px;
+  margin: 2% 5%;
+  box-shadow: 0px 0px 20px gray;
+  color: white;
+  background-color: rgb(16, 17, 41);
+}
+
+
+/* .tempBox{
+  background-image: linear-gradient(rgb(233, 86, 86), rgb(182, 28, 28));
+}
+
+.DOBox{
+  background-image: linear-gradient(rgb(77, 219, 165), rgb(18, 139, 93));
+}
+
+.phBox{
+  background-image: linear-gradient(rgb(80, 156, 228), rgb(22, 96, 165));
+} */
+
+.informationTitle{
+  font-family:sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.infoText{
+  padding-bottom: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin: 2% 10%;
+  line-height: 1.5;
+}
 

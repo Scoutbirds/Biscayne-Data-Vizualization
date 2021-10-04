@@ -45,7 +45,7 @@ const gradient = document.getElementById("legend")
 mapbutton.addEventListener("click", function(){
 window.scrollTo(
     {
-        top: 1800,
+        top: 1600,
         left:0,
         behavior:"smooth",
     });
