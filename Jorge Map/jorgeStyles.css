@@ -55,8 +55,9 @@
 #mapbutton{
   padding: 10px 60px;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: rgb(16, 20, 36);
+  background-color: rgb(241, 243, 125);
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -69,7 +70,7 @@
   background-color: white;
   cursor:pointer;
   color: rgb(16, 20, 36);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.4);
 }
 #image{
   margin-left: 10%;
