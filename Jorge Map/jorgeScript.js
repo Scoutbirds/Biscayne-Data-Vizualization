@@ -48,7 +48,7 @@ window.scrollTo(
     });
 })
 
-var info = ["Tempinfo", "ODOinfo", "pHinfo"];
+var info = ["Tempinfo", "ODOinfo", "pHinfo", "Salinityinfo", "Chlorophyllinfo", "Turbidityinfo"];
 
 for(var i = 0; i < info.length; i++){
     document.getElementById(info[i]).style.display= "none"
@@ -113,30 +113,43 @@ ODOButton.addEventListener("click", function()
 
 SalButton.addEventListener("click", function()
 {
-    map.setPaintProperty("Temp", "circle-opacity", 0);
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
     map.setPaintProperty("Salinity", "circle-opacity", 1);
-    map.setPaintProperty("ODO", "circle-opacity", 0);
-    map.setPaintProperty("Chlorophyll", "circle-opacity", 0);
-    map.setPaintProperty("Turbidity", "circle-opacity", 0);
-    map.setPaintProperty("pH", "circle-opacity", 0);
+
+    document.getElementById("Salinityinfo").style.display= "inline"
 } )
 
 ChButton.addEventListener("click", function()
 {
-    map.setPaintProperty("Temp", "circle-opacity", 0);
-    map.setPaintProperty("Salinity", "circle-opacity", 0);
-    map.setPaintProperty("ODO", "circle-opacity", 0);
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
     map.setPaintProperty("Chlorophyll", "circle-opacity", 1);
-    map.setPaintProperty("Turbidity", "circle-opacity", 0);
-    map.setPaintProperty("pH", "circle-opacity", 0);
+    
+    document.getElementById("Chlorophyllinfo").style.display= "inline"
 } )
 
 TurButton.addEventListener("click", function()
 {
-    map.setPaintProperty("Temp", "circle-opacity", 0);
-    map.setPaintProperty("Salinity", "circle-opacity", 0);
-    map.setPaintProperty("ODO", "circle-opacity", 0);
-    map.setPaintProperty("Chlorphyll", "circle-opacity", 0);
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
     map.setPaintProperty("Turbidity", "circle-opacity", 1);
-    map.setPaintProperty("pH", "circle-opacity", 0);
+
+    document.getElementById("Turbidityinfo").style.display= "inline"
+
 } )
