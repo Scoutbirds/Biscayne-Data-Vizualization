@@ -28,8 +28,6 @@ const littleRiver = new mapboxgl.Marker()
 
 
 
-
-
 var data = ["Temp", "Salinity", "ODO","Chlorophyll","Turbidity", "pH"];
 
 /*For loop that turns all the data's opacity to zero*/
@@ -37,52 +35,79 @@ map.on('load', function () {
 for(var i = 0; i < data.length; i++){
     map.setPaintProperty(data[i], "circle-opacity", 0);
 }
-map.setPaintProperty("ODO", "circle-opacity", 1); //turns Oxygen dissolved data opacity to 1
+map.setPaintProperty("Temp", "circle-opacity", 1); //turns Temperature data opacity to 1
 });
 
-const gradient = document.getElementById("legend")
 
 mapbutton.addEventListener("click", function(){
 window.scrollTo(
     {
-        top: 1600,
+        top: 1300,
         left:0,
         behavior:"smooth",
     });
 })
 
+var info = ["Tempinfo", "ODOinfo", "pHinfo"];
+
+for(var i = 0; i < info.length; i++){
+    document.getElementById(info[i]).style.display= "none"
+}
+
+document.getElementById("Tempinfo").style.display= "inline"
+
+
+//Listens for the temperature button
 TempButton.addEventListener("click", function()
 {
+    //Makes all the categories opacity zero
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
+    
+    //makes the temperature category 1
     map.setPaintProperty("Temp", "circle-opacity", 1);
-    map.setPaintProperty("Salinity", "circle-opacity", 0);
-    map.setPaintProperty("ODO", "circle-opacity", 0);
-    map.setPaintProperty("Chlorophyll", "circle-opacity", 0);
-    map.setPaintProperty("Turbidity", "circle-opacity", 0);
-    map.setPaintProperty("pH", "circle-opacity", 0);
-
-
-    document.querySelector('#gradient').classList.add('gradient2');
+    
+    document.getElementById("Tempinfo").style.display= "inline"
 } )
+
+
+
+
 
 pHButton.addEventListener("click", function()
 {
-    map.setPaintProperty("Temp", "circle-opacity", 0);
-    map.setPaintProperty("Salinity", "circle-opacity", 0);
-    map.setPaintProperty("ODO", "circle-opacity", 0);
-    map.setPaintProperty("Chlorophyll", "circle-opacity", 0);
-    map.setPaintProperty("Turbidity", "circle-opacity", 0);
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
+
+
     map.setPaintProperty("pH", "circle-opacity", 1);
+    document.getElementById("pHinfo").style.display= "inline"
 } )
 
 
 ODOButton.addEventListener("click", function()
 {
-    map.setPaintProperty("Temp", "circle-opacity", 0);
-    map.setPaintProperty("Salinity", "circle-opacity", 0);
+    for(var i = 0; i < data.length; i++){
+        map.setPaintProperty(data[i], "circle-opacity", 0);
+    }
+
+    for(var i = 0; i < info.length; i++){
+        document.getElementById(info[i]).style.display= "none"
+    }
+
     map.setPaintProperty("ODO", "circle-opacity", 1);
-    map.setPaintProperty("Chlorophyll", "circle-opacity", 0);
-    map.setPaintProperty("Turbidity", "circle-opacity", 0);
-    map.setPaintProperty("pH", "circle-opacity", 0);
+
+    document.getElementById("ODOinfo").style.display= "inline"
 } )
 
 
