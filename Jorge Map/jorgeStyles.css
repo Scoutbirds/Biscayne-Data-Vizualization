@@ -1,6 +1,4 @@
 
-
-
 .navbar{
   top: 0px;
   height: 65px;
@@ -35,10 +33,12 @@
 }
 
 .firstpage{
-  height: 900px;
-  background-image: url("oceand.jpg");
+  height: 600px;
+  /* background-image: url("oceand.jpg"); */
+  background-color: rgb(17, 23, 48);
   background-repeat: no-repeat, repeat;
   background-size: 1920px;
+  margin-bottom: 2%;
 }
 
 .firstmessage{
@@ -46,7 +46,7 @@
   font-weight: bold;
   font-size: 100px;
   padding-left: 33%;
-  padding-top: 220px;
+  padding-top: 150px;
   float: left;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -87,7 +87,13 @@
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+
+  margin: 0% 20%;
+  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+  padding-bottom: 1%;
+  
 }
 
 .info{
@@ -108,10 +114,11 @@ body {
 .mapcontainer{
     top: 0;
     bottom: 0;
-    height: 600px;
+    height: 850px;
     position: relative;
-    padding-bottom: 10%;
+    padding-bottom: 0%;
     padding-top: 2%;
+    margin: 0% 0%;
     background-color: rgb(255, 255, 255);
 }
 
@@ -119,24 +126,28 @@ body {
 #map {
   top: 0;
   bottom: 0;
-  height: 600px;
-  width: 65%;
+  height: 650px;
+  width: 90%;
   float: left;
-  margin-left: 10%;
+  
+  margin: 0% 5%;
 }
 
 .optionsContainer{
-    height: 150px;
     position: relative;
-    margin-right: 10%;
+    /* margin-right: 10%; */
+    width: 90%;
+    margin: 0% 5%;
+    
 }
 
 .optionbuttons{
   background-color: rgb(255, 255, 255);
   border: none;
   color: rgb(0, 0, 0);
-  width: 15%; 
-  display:Block;
+  width: 16.66666%; 
+  /* display:Block; */
+  float: left;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -156,56 +167,40 @@ body {
   cursor:pointer;
 }
 
-.gradient{
-  height:20px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
-  margin-left: 5%;
-  margin-right: 15%;
+.focus{
+  background-color: #1d1f27;
+  border: none;
+  color: white;
+  width: 15%; 
+  display:Block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 31px 0px;
+  transition-duration: 0.3s;
+  cursor: pointer;
 
 }
 
-.gradient2{
-  height:20px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgb(139, 135, 228) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
-  margin-left: 5%;
-  margin-right: 15%;
-
-}
 
 .information{
   height: 500px;
-  margin: 2% 0%;
+  margin: 0% 0%;
 }
 
 .informationBox{
   border-radius: 5px;
   float:left;
-  width: 40%;
+  width: 80%;
   height: 350px;
-  margin: 2% 5%;
-  box-shadow: 0px 0px 20px gray;
-  color: white;
-  background-color: rgb(16, 17, 41);
+  margin: 1% 10%;
+  box-shadow: 0px 10px 20px rgb(216, 213, 213);
+  color: rgb(0, 0, 0);
 }
-
-
-/* .tempBox{
-  background-image: linear-gradient(rgb(233, 86, 86), rgb(182, 28, 28));
-}
-
-.DOBox{
-  background-image: linear-gradient(rgb(77, 219, 165), rgb(18, 139, 93));
-}
-
-.phBox{
-  background-image: linear-gradient(rgb(80, 156, 228), rgb(22, 96, 165));
-} */
 
 .informationTitle{
   font-family:sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
 }
