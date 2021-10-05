@@ -225,7 +225,7 @@ body {
 #mapKeyLegend {
   position: absolute;
   margin: 10px;
-  width: 200px;
+  width: 170px;
   background-color: white;
   padding: 0px;
   padding-top: 15px;
@@ -244,7 +244,6 @@ body {
 .row {
   width: 100%;
   display: inline-block;
-  padding: 5px;
 }
 
 .label {
