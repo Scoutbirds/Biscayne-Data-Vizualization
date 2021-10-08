@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>CREST MAP</title>
+    <title>Biscayne visualizations</title>
     <meta
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
@@ -13,95 +13,179 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="jorgeStyles.css">
-    
-
+    <link rel="stylesheet" href="jorgeStyles.css" />
   </head>
   <body>
-    <p class = "Title">BISCAYNE DATA VISUALIZATIONS</p>
+    <!-- <div class="navbar">
+      <div class="FIU">Florida International University</div>
+      <div class="Bis">Biscayne Bay</div>
+    </div> -->
 
-    <div class = "mapcontainer">
-      <div id ="map"></div>
+    <div class="firstpage">
+      <div class="firstmessage">
+        <div>Biscayne<br />Visualization</div>
+        <button id="mapbutton">Map</button>
+      </div>
+      <!-- <img id = "image" src="WaterPicture.jpg"> -->
+    </div>
+
+    <div class="biscayne">
+      <p class="Title">BISCAYNE BAY DATA</p>
+      <div class="info">
+        <p>
+          As long as 20 years ago, scientists in FIU's Institute of Environment
+          were warning about the dangerous degradation of Biscayne Bay.
+          Increased pollution, urbanization and climate change have all
+          contributed to the precipitous decline of our iconic bay.
+          <br />
+          <br />
+          This August 2020, the bay experienced an obvious sign of distress.
+          Several reports of fish kills, followed by algal blooms, were seen
+          throughout the waterway. Our scientists responded urgently to this
+          call.
+          <br />
+          <br />
+          We are aggregating all of the data and information that is being
+          collected and about Biscayne Bay on this page. Here you can find
+          datsets and data visualizations collected and developed by FIU
+          scientists, as well as by partner organizations that are striving to
+          restore Biscayne Bay to the healthy and thriving waterway it once was.
+          We hope to make this data available to all so that anyone can help us
+          restore, protect and fight to save our bay.
+        </p>
+      </div>
+      <p class="Title">DATA VISUALIZATIONS</p>
+      <div class="info">
+        <p>
+          The Institute of Environment's data visualization team has developed
+          an interactive map and application that allows users to explore the
+          data about Biscayne Bay.
+        </p>
+      </div>
+    </div>
+
+    <div class="mapcontainer">
+      <p class="Title">MAP</p>
+      <div id="map"></div>
+      <div class="map-overlay top">
+        <div class="map-overlay-inner" id="map-overlay-legend">
+          <div id="legend" class="legend">
+            <!-- map legend -->
+            <div class="gradContainer" id="gradNum"></div>
+            <!-- map legend end -->
+          </div>
+        </div>
+      </div>
       <div class="optionsContainer">
-        <button class="optionbuttons" id = "TempButton">Temperature</button>
-        <button class="optionbuttons" id = "pHButton">pH Levels</button>
-        <button class="optionbuttons" id = "ODOButton">Dissolved Oxygen</button>
-        <button class="optionbuttons" id = "SalButton">Salinity</button>
-        <button class="optionbuttons" id = "ChButton">Chlorophyll</button>
-        <button class="optionbuttons" id = "TurButton">Turbidity</button>
+        <button
+          class="optionbuttons"
+          id="TempButton"
+          onclick="changeLegend('temp_level')"
+        >
+          Temperature
+        </button>
+        <button
+          class="optionbuttons"
+          id="pHButton"
+          onclick="changeLegend('pH_level')"
+        >
+          pH Levels
+        </button>
+        <button
+          class="optionbuttons"
+          id="ODOButton"
+          onclick="changeLegend('odo_level')"
+        >
+          Dissolved Oxygen
+        </button>
+        <button
+          class="optionbuttons"
+          id="SalButton"
+          onclick="changeLegend('sal_level')"
+        >
+          Salinity
+        </button>
+        <button
+          class="optionbuttons"
+          id="ChButton"
+          onclick="changeLegend('ch_level')"
+        >
+          Chlorophyll
+        </button>
+        <button
+          class="optionbuttons"
+          id="TurButton"
+          onclick="changeLegend('tur_level')"
+        >
+          Turbidity
+        </button>
       </div>
     </div>
 
     <div>
-      <div id = "gradient"class="gradient"></div>
+      <!--<div id = "gradient"class="gradient"></div>-->
     </div>
 
+    <div class="information">
+      <div class="informationBox" id="Tempinfo">
+        <p class="informationTitle">Temperature</p>
+        <p class="infoText">
+          Marine creatures have a difficult time processing oxygen and
+          functioning overall at temperatures that are not ideal, which leads to
+          sick animals or worse dead ones.
+        </p>
+      </div>
+      <div class="informationBox" id = "pHinfo">
+        <p class = "informationTitle">pH Level</p>
+        <p class="infoText">
+          The pH scale runs from 0 to 14, with 7 being a neutral pH. Anything higher than 7 is basic (or alkaline) and anything lower than 7 is acidic. 
+          <br>
+          <br>
+          The ability of some fish, like clownfish, to detect predators is decreased in more acidic waters. 
+          Studies have shown that decreased pH levels also affect the ability of larval clownfish offsite link to locate suitable habitat.
+          <br>
+          <br>
+          <a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification">Reference</a>
 
+        </p>
+      </div>
+      <div class="informationBox" id="ODOinfo">
+        <p class="informationTitle">Dissolved Oxygen</p>
+        <p class="infoText">
+          Dissolved oxygen (DO) is the amount of oxygen that is present in
+          water. Although water molecules do contain an oxygen atom, this oxygen
+          is not what is needed by aquatic organisms.
+        </p>
+      </div>
+      <div class="informationBox" id="Salinityinfo">
+        <p class="informationTitle">Salinity</p>
+        <p class="infoText">
+          The term "salinity" refers to the concentrations of salts in water or
+          soils. As a general guideline, it is best to maintain a salinity of
+          1.026.
+        </p>
+      </div>
+      <div class="informationBox" id="Chlorophyllinfo">
+        <p class="informationTitle">Chlorophyll</p>
+        <p class="infoText">INFO</p>
+      </div>
+      <div class="informationBox" id = "Turbidityinfo">
+        <p class = "informationTitle">Turbidity</p>
+        <p class="infoText">
+          Turbidity is the measure of relative clarity of a liquid. Often caused by particles in the water that scatter light, high turbidity 
+          gives the water a murky or cloudy look.
+          <br />
+          <br />
+          High turbidity can significantly reduce the aesthetic quality of lakes and streams, having a harmful impact on recreation and 
+          tourism.
+          <br />
+          <br />
 
-    <div class="info">
-      <p>
-        As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization 
-        and climate change have all contributed to the precipitous decline of our iconic bay. 
-      </p>
-
-      <p >
-        This August 2020, the bay experienced an obvious sign of distress. Several reports of fish kills, followed by algal blooms, were seen throughout the waterway. 
-        Our scientists responded urgently to this call. 
-      </p>
-
-      <p> 
-        We are aggregating all of the data and information that is being collected and about Biscayne Bay on this page. Here you can find datsets and data visualizations 
-        collected and developed by FIU scientists, as well as by partner organizations that are striving to restore Biscayne Bay to the healthy and thriving waterway it once was. 
-        We hope to make this data available to all so that anyone can help us restore, protect and fight to save our bay.
-      </p>
+          <a href="https://www.pca.state.mn.us/sites/default/files/wq-iw3-21.pdf">Reference</a>
+        </p>
+      </div>
     </div>
 
-    <script src = "jorgeScript.js"></script>
+    <script src="jorgeScript.js"></script>
   </body>
 </html>
-
-
-
-<!-- <div class="map-overlay top">
-      <div class="map-overlay-inner">
-        <div id="legend" class="legend">
-        <div class="bar"></div>
-        </div>
-        <div id="HASH" class="blue-msg">
-          <div id="left">
-            <span id="time-HASH" class="smalltext">low</span>
-          </div>
-          <div id="right">
-            <span class="ios-circle">high</span>
-          </div>
-        </div>
-      </div>
-      <div class="map-overlay-inner">
-        <label>Data Sets to Display</label>
-        <div>
-          <input type="checkbox" id="Buoys" name="Buoy"  checked/>
-          <label for="Buoys" id="sensorLabels">Crest Buoys - (08/13)</label>
-        </div>
-        <div>
-          <input type="checkbox" id="Fish" name="Fishk" checked/>
-          <label for="Fish" id="sensorLabels">Fish Kill - (08/13 - 08/20)</label>
-        </div>
-      </div>
-      <div class="map-overlay-inner">
-        <fieldset>
-        <div  class="offset">
-          <label class="nextto">Sensors to Display</label>
-          <button type="button" id="viewButton" name="View">Visualize</button>
-        </div>
-          <select id="layer" name="layer">
-            <option value="Empty"></option>
-            <option value="Sal">Salinity</option>
-            <option value="Temp">Temperature</option>
-            <option value="ODO" selected>Dissolved oxygen</option>
-            <option value="Chlor">Chlorophyll</option>
-            <option value="Turb">Turbidity</option>
-            <option value="PH">PH</option>
-          </select>
-        </fieldset>
-      </div>
-      </div> -->
