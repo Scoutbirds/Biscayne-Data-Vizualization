@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Biscayne visualizations</title>
     <meta
-      name="viewport" 
+      name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
@@ -13,64 +13,112 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="jorgeStyles.css">
-    
-
+    <link rel="stylesheet" href="jorgeStyles.css" />
   </head>
   <body>
-
     <!-- <div class="navbar">
       <div class="FIU">Florida International University</div>
       <div class="Bis">Biscayne Bay</div>
     </div> -->
-    
+
     <div class="firstpage">
-      <div class ="firstmessage">
-        <div>
-          Biscayne<br>Visualization
-        </div>
-        <button id = "mapbutton">Map</button>
+      <div class="firstmessage">
+        <div>Biscayne<br />Visualization</div>
+        <button id="mapbutton">Map</button>
       </div>
       <!-- <img id = "image" src="WaterPicture.jpg"> -->
     </div>
 
-
-    <div class = "biscayne">
-      <p class = "Title">BISCAYNE BAY DATA</p>
+    <div class="biscayne">
+      <p class="Title">BISCAYNE BAY DATA</p>
       <div class="info">
         <p>
-          As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization 
-          and climate change have all contributed to the precipitous decline of our iconic bay. 
-          <br>
-          <br>
-          This August 2020, the bay experienced an obvious sign of distress. Several reports of fish kills, followed by algal blooms, were seen throughout the waterway. 
-          Our scientists responded urgently to this call. 
-          <br>
-          <br>
-          We are aggregating all of the data and information that is being collected and about Biscayne Bay on this page. Here you can find datsets and data visualizations 
-          collected and developed by FIU scientists, as well as by partner organizations that are striving to restore Biscayne Bay to the healthy and thriving waterway it once was. 
-          We hope to make this data available to all so that anyone can help us restore, protect and fight to save our bay.
+          As long as 20 years ago, scientists in FIU's Institute of Environment
+          were warning about the dangerous degradation of Biscayne Bay.
+          Increased pollution, urbanization and climate change have all
+          contributed to the precipitous decline of our iconic bay.
+          <br />
+          <br />
+          This August 2020, the bay experienced an obvious sign of distress.
+          Several reports of fish kills, followed by algal blooms, were seen
+          throughout the waterway. Our scientists responded urgently to this
+          call.
+          <br />
+          <br />
+          We are aggregating all of the data and information that is being
+          collected and about Biscayne Bay on this page. Here you can find
+          datsets and data visualizations collected and developed by FIU
+          scientists, as well as by partner organizations that are striving to
+          restore Biscayne Bay to the healthy and thriving waterway it once was.
+          We hope to make this data available to all so that anyone can help us
+          restore, protect and fight to save our bay.
         </p>
       </div>
-      <p class = "Title">DATA VISUALIZATIONS</p>
+      <p class="Title">DATA VISUALIZATIONS</p>
       <div class="info">
         <p>
-          The Institute of Environment's data visualization team has developed an interactive map and application that allows users to explore the data about Biscayne Bay.
+          The Institute of Environment's data visualization team has developed
+          an interactive map and application that allows users to explore the
+          data about Biscayne Bay.
         </p>
       </div>
     </div>
-  
 
-    <div class = "mapcontainer"> 
-      <p class = "Title">MAP</p>
-      <div id ="map"></div>
+    <div class="mapcontainer">
+      <p class="Title">MAP</p>
+      <div id="map"></div>
+      <div class="map-overlay top">
+        <div class="map-overlay-inner" id="map-overlay-legend">
+          <div id="legend" class="legend">
+            <!-- map legend -->
+            <div class="gradContainer" id="gradNum"></div>
+            <!-- map legend end -->
+          </div>
+        </div>
+      </div>
       <div class="optionsContainer">
-        <button class="optionbuttons" id = "TempButton">Temperature</button>
-        <button class="optionbuttons" id = "pHButton">pH Levels</button>
-        <button class="optionbuttons" id = "ODOButton">Dissolved Oxygen</button>
-        <button class="optionbuttons" id = "SalButton">Salinity</button>
-        <button class="optionbuttons" id = "ChButton">Chlorophyll</button>
-        <button class="optionbuttons" id = "TurButton">Turbidity</button>
+        <button
+          class="optionbuttons"
+          id="TempButton"
+          onclick="changeLegend('temp_level')"
+        >
+          Temperature
+        </button>
+        <button
+          class="optionbuttons"
+          id="pHButton"
+          onclick="changeLegend('pH_level')"
+        >
+          pH Levels
+        </button>
+        <button
+          class="optionbuttons"
+          id="ODOButton"
+          onclick="changeLegend('odo_level')"
+        >
+          Dissolved Oxygen
+        </button>
+        <button
+          class="optionbuttons"
+          id="SalButton"
+          onclick="changeLegend('sal_level')"
+        >
+          Salinity
+        </button>
+        <button
+          class="optionbuttons"
+          id="ChButton"
+          onclick="changeLegend('ch_level')"
+        >
+          Chlorophyll
+        </button>
+        <button
+          class="optionbuttons"
+          id="TurButton"
+          onclick="changeLegend('tur_level')"
+        >
+          Turbidity
+        </button>
       </div>
     </div>
 
@@ -79,49 +127,44 @@
     </div>
 
     <div class="information">
-      <div class="informationBox" id = "Tempinfo">
-        <p class = "informationTitle">Temperature</p>
+      <div class="informationBox" id="Tempinfo">
+        <p class="informationTitle">Temperature</p>
         <p class="infoText">
-        Marine creatures have a difficult time processing oxygen and functioning overall at 
-        temperatures that are not ideal, which leads to sick animals or worse dead ones.
+          Marine creatures have a difficult time processing oxygen and
+          functioning overall at temperatures that are not ideal, which leads to
+          sick animals or worse dead ones.
         </p>
       </div>
-      <div class="informationBox" id = "pHinfo">
-        <p class = "informationTitle">pH Level</p>
+      <div class="informationBox" id="pHinfo">
+        <p class="informationTitle">pH Level</p>
+        <p class="infoText">INFO</p>
+      </div>
+      <div class="informationBox" id="ODOinfo">
+        <p class="informationTitle">Dissolved Oxygen</p>
         <p class="infoText">
-        INFO
+          Dissolved oxygen (DO) is the amount of oxygen that is present in
+          water. Although water molecules do contain an oxygen atom, this oxygen
+          is not what is needed by aquatic organisms.
         </p>
       </div>
-      <div class="informationBox" id = "ODOinfo">
-        <p class = "informationTitle">Dissolved Oxygen</p>
+      <div class="informationBox" id="Salinityinfo">
+        <p class="informationTitle">Salinity</p>
         <p class="infoText">
-          Dissolved oxygen (DO) is the amount of oxygen that is present in water. 
-          Although water molecules do contain an oxygen atom, this oxygen is not what is needed by aquatic organisms.
+          The term "salinity" refers to the concentrations of salts in water or
+          soils. As a general guideline, it is best to maintain a salinity of
+          1.026.
         </p>
       </div>
-      <div class="informationBox" id = "Salinityinfo">
-        <p class = "informationTitle">Salinity</p>
-        <p class="infoText">
-          The term "salinity" refers to the concentrations of salts in water or soils.
-          As a general guideline, it is best to maintain a salinity of 1.026. 
-        </p>
+      <div class="informationBox" id="Chlorophyllinfo">
+        <p class="informationTitle">Chlorophyll</p>
+        <p class="infoText">INFO</p>
       </div>
-      <div class="informationBox" id = "Chlorophyllinfo">
-        <p class = "informationTitle">Chlorophyll</p>
-        <p class="infoText">
-        INFO
-        </p>
+      <div class="informationBox" id="Turbidityinfo">
+        <p class="informationTitle">Turbidity</p>
+        <p class="infoText">INFO</p>
       </div>
-      <div class="informationBox" id = "Turbidityinfo">
-        <p class = "informationTitle">Turbidity</p>
-        <p class="infoText">
-        INFO
-        </p>
-      </div>
-      
-      
     </div>
 
-    <script src = "jorgeScript.js"></script>
+    <script src="jorgeScript.js"></script>
   </body>
 </html>

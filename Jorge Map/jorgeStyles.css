@@ -1,17 +1,57 @@
+.map-overlay {
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: absolute;
+  width: 200px;
+  top: 0;
+  left: 0;
+  padding: 225px;
+  z-index: 100;
+}
 
-.navbar{
+.map-overlay .legend .bar {
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(to left, #83cc82, #5943c2);
+}
+
+.map-overlay .map-overlay-inner {
+  color: #fff;
+  background-color: #1b2129;
+  box-shadow: 5px 3px 5px rgb(255, 255, 255);
+  border-radius: 3px;
+  outline-width: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.rightlegendtext {
+  margin: 0;
+  display: inline;
+  float: right;
+}
+
+.leftlegendtext {
+  margin: 0;
+  display: inline;
+  float: left;
+}
+.legendtext {
+  height: 10px;
+}
+
+.navbar {
   top: 0px;
   height: 65px;
   position: sticky;
-  position:-webkit-sticky;
+  position: -webkit-sticky;
   background-color: white;
   z-index: 1;
   box-shadow: 0px 0px 10px -4px;
 }
 /*rgb(11, 8, 26);*/
 
-.FIU{
-  font-family:sans-serif;
+.FIU {
+  font-family: sans-serif;
   font-size: 40px;
   font-weight: bold;
   float: left;
@@ -21,18 +61,17 @@
   color: black;
 }
 
-.Bis{
-  font-family:sans-serif;
+.Bis {
+  font-family: sans-serif;
   font-size: 40px;
   font-weight: bold;
   float: left;
   text-align: center;
   padding-top: 10px;
   margin-left: 50px;
-
 }
 
-.firstpage{
+.firstpage {
   height: 600px;
   /* background-image: url("oceand.jpg"); */
   background-color: rgb(17, 23, 48);
@@ -41,8 +80,8 @@
   margin-bottom: 2%;
 }
 
-.firstmessage{
-  font-family:sans-serif;
+.firstmessage {
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 100px;
   padding-left: 33%;
@@ -52,13 +91,13 @@
   text-align: center;
 }
 
-#mapbutton{
+#mapbutton {
   padding: 10px 60px;
   border: none;
   color: rgb(0, 0, 0);
   background-color: rgb(16, 20, 36);
   background-color: rgb(241, 243, 125);
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 30px;
   font-weight: 400;
   transition-duration: 0.3s;
@@ -67,24 +106,33 @@
   animation-name: colorchange;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  
 }
 
-
-@keyframes colorchange{
-  0%   {background-color:rgb(248, 248, 158); left:0px; top:0px;}
-  50%  {background-color:rgb(255, 253, 122); left:200px; top:0px;}
-  100% {background-color:rgb(248, 248, 158); left:0px; top:0px;}
-
+@keyframes colorchange {
+  0% {
+    background-color: rgb(248, 248, 158);
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    background-color: rgb(255, 253, 122);
+    left: 200px;
+    top: 0px;
+  }
+  100% {
+    background-color: rgb(248, 248, 158);
+    left: 0px;
+    top: 0px;
+  }
 }
 
-#mapbutton:hover{
+#mapbutton:hover {
   background-color: white;
-  cursor:pointer;
+  cursor: pointer;
   color: rgb(16, 20, 36);
   box-shadow: 0 0px 20px rgba(255, 255, 255, 0.4);
 }
-#image{
+#image {
   margin-left: 10%;
   margin-top: 5%;
   width: 40%;
@@ -92,49 +140,46 @@
   box-shadow: 0px 0px 50px -20px;
 }
 
-.biscayne{
+.biscayne {
   padding-top: 20px;
 }
-.Title{
-  font-family:sans-serif;
+.Title {
+  font-family: sans-serif;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
   /* text-decoration: underline; */
 
   margin: 0% 20%;
-  
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.253);
   padding-bottom: 1%;
-  
 }
 
-.info{
+.info {
   padding-bottom: 50px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   width: 60%;
   margin: 0% 20%;
   line-height: 1.5;
-  
 }
 
 body {
-    margin: 0;
-    padding: 0;
-  }
-
-.mapcontainer{
-    top: 0;
-    bottom: 0;
-    height: 850px;
-    position: relative;
-    padding-bottom: 0%;
-    padding-top: 2%;
-    margin: 0% 0%;
-    background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
 }
 
+.mapcontainer {
+  top: 0;
+  bottom: 0;
+  height: 850px;
+  position: relative;
+  padding-bottom: 0%;
+  padding-top: 2%;
+  margin: 0% 0%;
+  background-color: rgb(255, 255, 255);
+}
 
 #map {
   top: 0;
@@ -142,69 +187,65 @@ body {
   height: 650px;
   width: 90%;
   float: left;
-  
+
   margin: 0% 5%;
 }
 
-
-.optionsContainer{
-    position: relative;
-    /* margin-right: 10%; */
-    width: 90%;
-    margin: 0% 5%;
-    
+.optionsContainer {
+  position: relative;
+  /* margin-right: 10%; */
+  width: 90%;
+  margin: 0% 5%;
 }
 
-.optionbuttons{
+.optionbuttons {
   background-color: rgb(255, 255, 255);
   border: none;
   color: rgb(0, 0, 0);
-  width: 16.66666%; 
+  width: 16.66666%;
   /* display:Block; */
   float: left;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 30px;
   font-weight: 400;
   padding: 31px 0px;
   transition-duration: 0.3s;
 }
 
-.optionbuttons:hover{
+.optionbuttons:hover {
   background-color: #1d1f27;
   color: rgb(255, 255, 255);
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.optionbuttons:focus{
+.optionbuttons:focus {
   background-color: #1d1f27;
   color: rgb(255, 255, 255);
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.focus{
+.focus {
   background-color: #1d1f27;
   border: none;
   color: white;
-  width: 15%; 
-  display:Block;
-  font-family: 'Source Sans Pro', sans-serif;
+  width: 15%;
+  display: Block;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 30px;
   font-weight: 400;
   padding: 31px 0px;
   transition-duration: 0.3s;
   cursor: pointer;
-
 }
 
-
-.information{
+.information {
   height: 500px;
   margin: 0% 0%;
 }
 
-.informationBox{
+.informationBox {
   border-radius: 5px;
-  float:left;
+  float: left;
   width: 70%;
   height: 350px;
   margin: 1% 15%;
@@ -216,14 +257,17 @@ body {
   animation-iteration-count: 1;
 }
 
-
 @keyframes big {
-  0%   { height: 0%}
-  100% { height: 350px}
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 350px;
+  }
 }
 
-.informationTitle{
-  font-family:sans-serif;
+.informationTitle {
+  font-family: sans-serif;
   font-size: 50px;
   font-weight: bold;
   text-align: center;
@@ -234,12 +278,11 @@ body {
   animation-iteration-count: 1;
   animation-delay: 1s;
   animation-fill-mode: forwards;
-  
 }
 
-.infoText{
+.infoText {
   padding-bottom: 50px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   margin: 2% 10%;
   line-height: 1.5;
@@ -253,7 +296,58 @@ body {
 }
 
 @keyframes show {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+/*=== Map Key Legend begin ===*/
+#map-overlay-legend {
+  display: none;
+}
+
+#mapKeyLegend {
+  position: absolute;
+  margin: 10px;
+  width: 170px;
+  background-color: white;
+  padding: 0px;
+  padding-top: 15px;
+  top: 60px;
+  left: 5px;
+  z-index: 1;
+  border-radius: 5px;
+  display: none;
+}
+
+.gradContainer {
+  padding: 0px;
+  margin: 15px;
+}
+
+.row {
+  width: 100%;
+  display: inline-block;
+}
+
+.label {
+  display: inline;
+}
+
+.label p {
+  display: inline;
+  padding-left: 15px;
+  font-size: 22px;
+}
+
+.gradBox {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+/*=== Map Key Legend end ===*/
