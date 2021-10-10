@@ -1,10 +1,10 @@
 .map-overlay {
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
-  width: 200px;
+  width: 150px;
   top: 0;
   left: 0;
-  padding: 225px;
+  padding: 105px;
   z-index: 100;
 }
 
@@ -299,6 +299,23 @@ body {
     opacity: 1;
   }
 }
+
+/*color blind button style*/
+.colorblindButton {
+  background-color: #c1ce0d; /* Yellow */
+  border: none;
+  color: rgb(26, 12, 233);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*round button style*/
+.roundButton {border-radius: 12px;}
 
 /*=== Map Key Legend begin ===*/
 #map-overlay-legend {
