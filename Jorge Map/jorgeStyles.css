@@ -16,7 +16,7 @@
 .map-overlay .map-overlay-inner {
   color: #fff;
   background-color: #1b2129;
-  box-shadow: 5px 3px 5px rgb(255, 255, 255);
+  /* box-shadow: 5px 3px 5px rgb(255, 255, 255); */
   border-radius: 3px;
   outline-width: 10px;
   padding: 10px;
@@ -38,6 +38,9 @@
 .legendtext {
   height: 10px;
 }
+
+
+/* End of legend */
 
 .navbar {
   top: 0px;
