@@ -5,6 +5,8 @@ container: "map",
 style: "mapbox://styles/jfern075/ckt5s06110bdx17nk6tcacn53",
 center: [-80.15, 25.85], // starting position [lng, lat]
 zoom: 12, // starting zoom
+maxZoom: 14, // max zoom in
+minZoom: 11 // max zoom out
 });
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
