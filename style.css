@@ -7,10 +7,18 @@
   padding: 175px;
 }
 
-.map-overlay .legend .bar {
+/*.map-overlay .legend .bar {
   height: 10px;
   width: 100%;
   background: linear-gradient(to left, #FF0000, #00FF00, #00FFFF);
+}*/
+
+.map-overlay .legend .bar {
+    display: block;
+    max-width: 760px;
+    height: 20px;
+    background: linear-gradient(to right, cyan, green, red);
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
 }
 
 .map-overlay .map-overlay-inner {

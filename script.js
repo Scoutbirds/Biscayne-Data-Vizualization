@@ -184,8 +184,8 @@ function changeLegend(val) {
     }
     
     if (val == "odo_level"){
-        legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #FFFFFF, #FFA500)";
+        legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">High</p><p class="rightlegendtext">Low</p></div>';
+        c[0].style.background = "linear-gradient(to left, #FFA500, #FFFFFF)";
     }
         
     if (val == "sal_level") {
