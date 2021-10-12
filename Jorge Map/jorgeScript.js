@@ -5,6 +5,8 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/scoutbirds/cktmgxnmt2tjy17o3tovbe9k0",
   center: [-80.15, 25.85], // starting position [lng, lat]
   zoom: 12, // starting zoom
+  maxZoom: 14, // max zoom in
+  minZoom: 11 // max zoom out
 });
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
