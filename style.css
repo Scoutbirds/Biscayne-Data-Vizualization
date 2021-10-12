@@ -218,7 +218,7 @@ body {
   cursor:pointer;
 }
 
-.optionbuttons:focus {
+/*.optionbuttons:focus {
   background-color: #1d1f27;
   color: rgb(255, 255, 255);
   cursor:pointer;
@@ -236,7 +236,7 @@ body {
   padding: 31px 0px;
   transition-duration: 0.3s;
   cursor: pointer;
-}
+}*/
 
 .information {
   height: 500px;

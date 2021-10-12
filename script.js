@@ -28,7 +28,8 @@ const littleRiver = new mapboxgl.Marker()
 //---------------------------------------------------------------------
 // Parameter Logic starts here
 
-var data = ["Temp", "Salinity", "ODO","Chlorophyll","Turbidity", "pH"];
+var data = ["Temp", "ODO", "pH", "Salinity", "Chlorophyll","Turbidity"];
+var booldata = [1, 0, 0, 0, 0, 0];
 
 /*For loop that turns all the data's opacity to zero*/
 map.on('load', function () 
@@ -39,7 +40,9 @@ map.on('load', function ()
         else 
             map.setPaintProperty(data[i], "circle-opacity", 0);
     }
-    map.setPaintProperty("Temp", "heatmap-opacity", 0.7); // Show temperature
+    document.getElementById("TempButton").style.background = "#1d1f27";
+    document.getElementById("TempButton").style.color = "rgb(255, 255, 255)";
+    map.setPaintProperty("Temp", "heatmap-opacity", 0.7); 
 });
 
 mapbutton.addEventListener("click", function()
@@ -67,6 +70,32 @@ document.getElementById("Tempinfo").style.display= "inline"
 
 TempButton.addEventListener("click", function()
 {
+    // Toggle true or false
+    booldata[0] = !booldata[0];
+    
+    var b = document.getElementById("TempButton");
+    
+    if (booldata[0]){
+        map.setPaintProperty("Temp", "heatmap-opacity", 0.7);
+        b.style.background = "#1d1f27";
+        b.style.color = "rgb(255, 255, 255)";
+        
+        for(var i = 0; i < info.length; i++){
+            document.getElementById(info[i]).style.display= "none"
+        }
+    
+        document.getElementById("Tempinfo").style.display= "inline"
+        
+    } else {
+        map.setPaintProperty("Temp", "heatmap-opacity", 0);
+        b.style.background = "rgb(255, 255, 255)";
+        b.style.color = "rgb(0, 0, 0)";
+    }
+
+})
+
+ODOButton.addEventListener("click", function()
+{
     for(var i = 0; i < data.length; i++){
         if (data[i] == "Temp")
             map.setPaintProperty(data[i], "heatmap-opacity", 0);
@@ -77,9 +106,9 @@ TempButton.addEventListener("click", function()
     for(var i = 0; i < info.length; i++){
         document.getElementById(info[i]).style.display= "none"
     }
-    
-    map.setPaintProperty("Temp", "heatmap-opacity", 0.7);
-    document.getElementById("Tempinfo").style.display= "inline"
+
+    map.setPaintProperty("ODO", "circle-opacity", 0.14);
+    document.getElementById("ODOinfo").style.display= "inline"
 })
 
 pHButton.addEventListener("click", function()
@@ -99,22 +128,6 @@ pHButton.addEventListener("click", function()
     document.getElementById("pHinfo").style.display= "inline"
 })
 
-ODOButton.addEventListener("click", function()
-{
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
-
-    map.setPaintProperty("ODO", "circle-opacity", 0.14);
-    document.getElementById("ODOinfo").style.display= "inline"
-})
 
 SalButton.addEventListener("click", function()
 {
