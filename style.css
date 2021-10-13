@@ -17,7 +17,7 @@
     display: block;
     max-width: 760px;
     height: 20px;
-    background: linear-gradient(to right, cyan, green, red);
+    background: linear-gradient(to left, #FF0000, #00FF00, #00FFFF);
     clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
 }
 
