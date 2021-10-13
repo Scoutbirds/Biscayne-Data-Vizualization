@@ -30,6 +30,9 @@ const littleRiver = new mapboxgl.Marker()
 
 var data = ["Temp", "ODO", "pH", "Salinity", "Chlorophyll","Turbidity"];
 var booldata = [1, 0, 0, 0, 0, 0];
+var buttons = ["TempButton", "ODOButton", "pHButton", "SalButton", "ChButton", "TurButton"];
+var info = ["Tempinfo", "ODOinfo", "pHinfo", "Salinityinfo", "Chlorophyllinfo", "Turbidityinfo"];
+var opacities = [0.7, 0.14, 0.2, 0.7, 0.37, 0.5];
 
 /*For loop that turns all the data's opacity to zero*/
 map.on('load', function () 
@@ -55,170 +58,107 @@ mapbutton.addEventListener("click", function()
         });
 })
 
-var info = ["Tempinfo", 
-            "ODOinfo", 
-            "pHinfo", 
-            "Salinityinfo", 
-            "Chlorophyllinfo", 
-            "Turbidityinfo"];
-
 for(var i = 0; i < info.length; i++){
-    document.getElementById(info[i]).style.display= "none"
+    document.getElementById(info[i]).style.display = "none"
 }
 
-document.getElementById("Tempinfo").style.display= "inline"
+document.getElementById("Tempinfo").style.display = "inline"
 
 TempButton.addEventListener("click", function()
 {
     // Toggle true or false
     booldata[0] = !booldata[0];
     
-    var b = document.getElementById("TempButton");
-    
-    if (booldata[0]){
-        map.setPaintProperty("Temp", "heatmap-opacity", 0.7);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("Tempinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("Temp", "heatmap-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[0])
+        toggleOn(0)
+    else 
+        toggleOff(0)
 })
 
 ODOButton.addEventListener("click", function()
 {
-	booldata[1] = !booldata[1];
+    booldata[1] = !booldata[1];
     
-    var b = document.getElementById("ODOButton");
-    
-    if (booldata[1]){
-        map.setPaintProperty("ODO", "circle-opacity", 0.14);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("ODOinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("ODO", "circle-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[1])
+        toggleOn(1)
+    else 
+        toggleOff(1)
 })
 
 pHButton.addEventListener("click", function()
 {
-	booldata[2] = !booldata[2];
+    booldata[2] = !booldata[2];
     
-    var b = document.getElementById("pHButton");
-    
-    if (booldata[2]){
-        map.setPaintProperty("pH", "circle-opacity", 0.2);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("pHinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("pH", "circle-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[2])
+        toggleOn(2)
+    else 
+        toggleOff(2)
 })
 
 
 SalButton.addEventListener("click", function()
 {
-	booldata[3] = !booldata[3];
+    booldata[3] = !booldata[3];
     
-    var b = document.getElementById("SalButton");
-    
-    if (booldata[3]){
-        map.setPaintProperty("Salinity", "circle-opacity", 0.7);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("Salinityinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("Salinity", "circle-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[3])
+        toggleOn(3)
+    else 
+        toggleOff(3)
 })
 
 ChButton.addEventListener("click", function()
 {
-	booldata[4] = !booldata[4];
+    booldata[4] = !booldata[4];
     
-    var b = document.getElementById("ChButton");
-    
-    if (booldata[4]){
-        map.setPaintProperty("Chlorophyll", "circle-opacity", 0.37);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("Chlorophyllinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("Chlorophyll", "circle-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[4])
+        toggleOn(4)
+    else 
+        toggleOff(4)
 })
 
 TurButton.addEventListener("click", function()
-{	
-	booldata[5] = !booldata[5];
+{    
+    booldata[5] = !booldata[5];
     
-    var b = document.getElementById("TurButton");
-    
-    if (booldata[5]){
-        map.setPaintProperty("Turbidity", "circle-opacity", 0.5);
-        b.style.background = "#1d1f27";
-        b.style.color = "rgb(255, 255, 255)";
-        
-        for(var i = 0; i < info.length; i++){
-            document.getElementById(info[i]).style.display= "none"
-        }
-    
-        document.getElementById("Turbidityinfo").style.display= "inline"
-        
-    } else {
-        map.setPaintProperty("Turbidity", "circle-opacity", 0);
-        b.style.background = "rgb(255, 255, 255)";
-        b.style.color = "rgb(0, 0, 0)";
-        b.style = "transition-duration: 0.3s";
-    }
+    if (booldata[5])
+        toggleOn(5)
+    else 
+        toggleOff(5)
 })
+
+function toggleOn(idx){
+    
+    var parameter = data[idx];
+    var b = document.getElementById(buttons[idx]);
+    
+    if (parameter == "Temp")
+        map.setPaintProperty(parameter, "heatmap-opacity", opacities[idx]);
+    else
+        map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
+    
+    b.style.background = "#1d1f27";
+    b.style.color = "rgb(255, 255, 255)";
+       
+    for(var i = 0; i < info.length; i++)
+        document.getElementById(info[i]).style.display = "none"
+    
+    document.getElementById(info[idx]).style.display = "inline"
+}
+
+function toggleOff(idx){
+    
+    var parameter = data[idx];
+    var b = document.getElementById(buttons[idx]);
+    
+    if (parameter == "Temp")
+        map.setPaintProperty(parameter, "heatmap-opacity", 0);
+    else
+        map.setPaintProperty(parameter, "circle-opacity", 0);
+    
+    b.style.background = "rgb(255, 255, 255)";
+    b.style.color = "rgb(0, 0, 0)";
+    b.style = "transition-duration: 0.3s";
+}
 
 function changeLegend(val) {
     document.getElementById("map-overlay-legend").style.display = "block";
