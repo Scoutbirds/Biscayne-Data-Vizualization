@@ -11,19 +11,19 @@ var map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
 
-const coralGables = new mapboxgl.Marker()
-  .setLngLat([-80.26966, 25.72695])
-  .addTo(map);
+// const coralGables = new mapboxgl.Marker()
+//   .setLngLat([-80.26966, 25.72695])
+//   .addTo(map);
 
-// Buoy 2
-const northBiscayneBay = new mapboxgl.Marker()
-  .setLngLat([-80.16712, 25.86171])
-  .addTo(map);
+// // Buoy 2
+// const northBiscayneBay = new mapboxgl.Marker()
+//   .setLngLat([-80.16712, 25.86171])
+//   .addTo(map);
 
-// Buoy 3
-const littleRiver = new mapboxgl.Marker()
-  .setLngLat([-80.176921, 25.846346])
-  .addTo(map);
+// // Buoy 3
+// const littleRiver = new mapboxgl.Marker()
+//   .setLngLat([-80.176921, 25.846346])
+//   .addTo(map);
 
 var data = ["Temp", "Salinity", "ODO", "Chlorophyll", "Turbidity", "pH"];
 
@@ -59,7 +59,8 @@ for (var i = 0; i < info.length; i++) {
 
 document.getElementById("Tempinfo").style.display = "inline";
 
-//Listens for the temperature button
+
+//TEMPERATURE
 TempButton.addEventListener("click", function () {
   //Makes all the categories opacity zero
   for (var i = 0; i < data.length; i++) {
@@ -75,6 +76,8 @@ TempButton.addEventListener("click", function () {
   document.getElementById("Tempinfo").style.display = "inline";
 });
 
+
+//PH
 pHButton.addEventListener("click", function () {
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
@@ -88,6 +91,9 @@ pHButton.addEventListener("click", function () {
   document.getElementById("pHinfo").style.display = "inline";
 });
 
+
+
+//ODO
 ODOButton.addEventListener("click", function () {
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
@@ -102,6 +108,8 @@ ODOButton.addEventListener("click", function () {
   document.getElementById("ODOinfo").style.display = "inline";
 });
 
+
+//Salinity
 SalButton.addEventListener("click", function () {
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
@@ -115,6 +123,8 @@ SalButton.addEventListener("click", function () {
   document.getElementById("Salinityinfo").style.display = "inline";
 });
 
+
+//Chlorophyll
 ChButton.addEventListener("click", function () {
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
@@ -128,6 +138,8 @@ ChButton.addEventListener("click", function () {
   document.getElementById("Chlorophyllinfo").style.display = "inline";
 });
 
+
+//Turbididty
 TurButton.addEventListener("click", function () {
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
@@ -140,6 +152,8 @@ TurButton.addEventListener("click", function () {
 
   document.getElementById("Turbidityinfo").style.display = "inline";
 });
+
+
 
 ///=========================================================================
 // to change the map legend key
