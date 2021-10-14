@@ -5,6 +5,8 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/scoutbirds/cktmgxnmt2tjy17o3tovbe9k0",
   center: [-80.15, 25.85], // starting position [lng, lat]
   zoom: 12, // starting zoom
+  maxZoom: 14, // max zoom in
+  minZoom: 11 // max zoom out
 });
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
@@ -144,138 +146,36 @@ TurButton.addEventListener("click", function () {
 function changeLegend(val) {
   document.getElementById("map-overlay-legend").style.display = "block";
 
-  z = document.getElementById("gradNum");
-  y = document.getElementsByClassName("gradBox");
-
-  var arr = [];
-  var txt = "";
-
+  var legend = document.getElementById("gradNum");
+  var c = document.getElementsByClassName("bar");
+  
   if (val == "temp_level") {
-    arr = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-    col = [
-      "blue",
-      "red",
-      "orange",
-      "pink",
-      "yellow",
-      "black",
-      "purple",
-      "navy",
-      "red",
-      "blue",
-    ];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
+      c[0].style.background = "linear-gradient(to left, #FF0000, #00FF00, #00FFFF)";
   }
-
+  
   if (val == "pH_level") {
-    arr = ["0-1", "1-2", "2-3", "3-4", "4-5"];
-    col = ["red", "orange", "orange", "orange", "yellow"];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Acidic</p><p class="rightlegendtext">Alkaline</p></div>';
+      c[0].style.background = "linear-gradient(to left, #0C86B6, #7EE4F6, #FCB6F7, #AA0303)";
   }
-
-  if (val == "odo_level") {
-    arr = [
-      "<1",
-      "1-2",
-      "2-3",
-      "3-4",
-      "4-5",
-      "5-6",
-      "6-7",
-      "7-8",
-      "8-9",
-      "9-10",
-      "10-11",
-      "11-12",
-      "12>",
-    ];
-    col = [
-      "purple",
-      "red",
-      "orange",
-      "pink",
-      "yellow",
-      "black",
-      "blue",
-      "violet",
-      "green",
-      "red",
-      "blue",
-      "orange",
-      "green",
-    ];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+  
+  if (val == "odo_level"){
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
+      c[0].style.background = "linear-gradient(to left, #FFFFFF, #FFA500)";
   }
-
+      
   if (val == "sal_level") {
-    arr = [1, 2, 3, 4];
-    col = ["red", "blue", "pink", "yellow"];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
+      c[0].style.background = "linear-gradient(to left, #A032FB, #3AF2BE)";
   }
-
+  
   if (val == "ch_level") {
-    arr = [1, 2, 3, 4, 5];
-    col = ["red", "white", "blue", "green", "black"];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
+      c[0].style.background = "linear-gradient(to left, #4B11DF, #8DED73)";
   }
-
+  
   if (val == "tur_level") {
-    arr = [1, 2, 3];
-    col = ["red", "white", "blue"];
-
-    for (x in (arr, col)) {
-      z.innerHTML =
-        txt +
-        '<div class="row"><div class="gradBox"></div><div class="label"><p>' +
-        arr[x] +
-        "</p></div></div>";
-      y[x].style.background = col[x];
-      txt = z.innerHTML;
-    }
+      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
+      c[0].style.background = "linear-gradient(to left, #B6FD44, #5AEFF6)";
   }
 }

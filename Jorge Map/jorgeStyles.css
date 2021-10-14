@@ -3,21 +3,20 @@
   position: absolute;
   width: 200px;
   top: 0;
-  left: 0;
-  padding: 225px;
-  z-index: 100;
+  right: 0;
+  padding: 175px;
 }
 
 .map-overlay .legend .bar {
   height: 10px;
   width: 100%;
-  background: linear-gradient(to left, #83cc82, #5943c2);
+  background: linear-gradient(to left, #FF0000, #00FF00, #00FFFF);
 }
 
 .map-overlay .map-overlay-inner {
   color: #fff;
   background-color: #1b2129;
-  box-shadow: 5px 3px 5px rgb(255, 255, 255);
+  /* box-shadow: 5px 3px 5px rgb(255, 255, 255); */
   border-radius: 3px;
   outline-width: 10px;
   padding: 10px;
@@ -35,15 +34,19 @@
   display: inline;
   float: left;
 }
+
 .legendtext {
   height: 10px;
 }
+
+
+/* End of legend */
 
 .navbar {
   top: 0px;
   height: 65px;
   position: sticky;
-  position: -webkit-sticky;
+  position:-webkit-sticky;
   background-color: white;
   z-index: 1;
   box-shadow: 0px 0px 10px -4px;
@@ -299,51 +302,3 @@ body {
     opacity: 1;
   }
 }
-
-/*=== Map Key Legend begin ===*/
-#map-overlay-legend {
-  display: none;
-}
-
-#mapKeyLegend {
-  position: absolute;
-  margin: 10px;
-  width: 170px;
-  background-color: white;
-  padding: 0px;
-  padding-top: 15px;
-  top: 60px;
-  left: 5px;
-  z-index: 1;
-  border-radius: 5px;
-  display: none;
-}
-
-.gradContainer {
-  padding: 0px;
-  margin: 15px;
-}
-
-.row {
-  width: 100%;
-  display: inline-block;
-}
-
-.label {
-  display: inline;
-}
-
-.label p {
-  display: inline;
-  padding-left: 15px;
-  font-size: 22px;
-}
-
-.gradBox {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  border-radius: 25px;
-  border: 1px solid black;
-}
-/*=== Map Key Legend end ===*/
