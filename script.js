@@ -28,18 +28,21 @@ const littleRiver = new mapboxgl.Marker()
 //---------------------------------------------------------------------
 // Parameter Logic starts here
 
-var data = ["Temp", "Salinity", "ODO","Chlorophyll","Turbidity", "pH"];
+var data = ["Temp", "ODO", "pH", "Salinity", "Chlorophyll","Turbidity"];
+var booldata = [1, 0, 0, 0, 0, 0];
+var buttons = ["TempButton", "ODOButton", "pHButton", "SalButton", "ChButton", "TurButton"];
+var info = ["Tempinfo", "ODOinfo", "pHinfo", "Salinityinfo", "Chlorophyllinfo", "Turbidityinfo"];
+var opacities = [0.7, 0.14, 0.2, 0.7, 0.37, 0.5];
 
 /*For loop that turns all the data's opacity to zero*/
 map.on('load', function () 
 {
     for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
+        map.setPaintProperty(data[i], "circle-opacity", 0);
     }
-    map.setPaintProperty("Temp", "heatmap-opacity", 0.7); // Show temperature
+    document.getElementById("TempButton").style.background = "#1d1f27";
+    document.getElementById("TempButton").style.color = "rgb(255, 255, 255)";
+    map.setPaintProperty("Temp", "circle-opacity", 0.7);
 });
 
 mapbutton.addEventListener("click", function()
@@ -52,120 +55,101 @@ mapbutton.addEventListener("click", function()
         });
 })
 
-var info = ["Tempinfo", 
-            "ODOinfo", 
-            "pHinfo", 
-            "Salinityinfo", 
-            "Chlorophyllinfo", 
-            "Turbidityinfo"];
-
 for(var i = 0; i < info.length; i++){
-    document.getElementById(info[i]).style.display= "none"
+    document.getElementById(info[i]).style.display = "none"
 }
 
-document.getElementById("Tempinfo").style.display= "inline"
+document.getElementById("Tempinfo").style.display = "inline"
 
 TempButton.addEventListener("click", function()
 {
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
+    // Toggle true or false
+    booldata[0] = !booldata[0];
     
-    map.setPaintProperty("Temp", "heatmap-opacity", 0.7);
-    document.getElementById("Tempinfo").style.display= "inline"
-})
-
-pHButton.addEventListener("click", function()
-{
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
-
-    map.setPaintProperty("pH", "circle-opacity", 0.2);
-    document.getElementById("pHinfo").style.display= "inline"
+    if (booldata[0])
+        toggleOn(0)
+    else 
+        toggleOff(0)
 })
 
 ODOButton.addEventListener("click", function()
 {
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
-
-    map.setPaintProperty("ODO", "circle-opacity", 0.14);
-    document.getElementById("ODOinfo").style.display= "inline"
+    booldata[1] = !booldata[1];
+    
+    if (booldata[1])
+        toggleOn(1)
+    else 
+        toggleOff(1)
 })
+
+pHButton.addEventListener("click", function()
+{
+    booldata[2] = !booldata[2];
+    
+    if (booldata[2])
+        toggleOn(2)
+    else 
+        toggleOff(2)
+})
+
 
 SalButton.addEventListener("click", function()
 {
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
+    booldata[3] = !booldata[3];
     
-    map.setPaintProperty("Salinity", "circle-opacity", 0.7);
-    document.getElementById("Salinityinfo").style.display= "inline"
+    if (booldata[3])
+        toggleOn(3)
+    else 
+        toggleOff(3)
 })
 
 ChButton.addEventListener("click", function()
 {
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
+    booldata[4] = !booldata[4];
     
-    map.setPaintProperty("Chlorophyll", "circle-opacity", 0.37);
-    document.getElementById("Chlorophyllinfo").style.display= "inline"
+    if (booldata[4])
+        toggleOn(4)
+    else 
+        toggleOff(4)
 })
 
 TurButton.addEventListener("click", function()
-{
-    for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
-    }
-
-    for(var i = 0; i < info.length; i++){
-        document.getElementById(info[i]).style.display= "none"
-    }
+{    
+    booldata[5] = !booldata[5];
     
-    map.setPaintProperty("Turbidity", "circle-opacity", 0.5);
-    document.getElementById("Turbidityinfo").style.display= "inline"
+    if (booldata[5])
+        toggleOn(5)
+    else 
+        toggleOff(5)
 })
+
+function toggleOn(idx){
+    
+    var parameter = data[idx];
+    var b = document.getElementById(buttons[idx]);
+    
+    map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
+    
+    b.style.background = "#1d1f27";
+    b.style.color = "rgb(255, 255, 255)";
+       
+    for(var i = 0; i < info.length; i++)
+        document.getElementById(info[i]).style.display = "none"
+    
+    document.getElementById(info[idx]).style.display = "inline"
+}
+
+function toggleOff(idx){
+    
+    var parameter = data[idx];
+    var b = document.getElementById(buttons[idx]);
+    
+    map.setPaintProperty(parameter, "circle-opacity", 0);
+    
+    b.style.background = "rgb(255, 255, 255)";
+    b.style.color = "rgb(0, 0, 0)";
+    b.style = "transition-duration: 0.3s";
+}
 
 function changeLegend(val) {
     document.getElementById("map-overlay-legend").style.display = "block";
