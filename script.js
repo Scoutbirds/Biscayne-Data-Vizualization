@@ -38,14 +38,11 @@ var opacities = [0.7, 0.14, 0.2, 0.7, 0.37, 0.5];
 map.on('load', function () 
 {
     for(var i = 0; i < data.length; i++){
-        if (data[i] == "Temp")
-            map.setPaintProperty(data[i], "heatmap-opacity", 0);
-        else 
-            map.setPaintProperty(data[i], "circle-opacity", 0);
+        map.setPaintProperty(data[i], "circle-opacity", 0);
     }
     document.getElementById("TempButton").style.background = "#1d1f27";
     document.getElementById("TempButton").style.color = "rgb(255, 255, 255)";
-    map.setPaintProperty("Temp", "heatmap-opacity", 0.7);
+    map.setPaintProperty("Temp", "circle-opacity", 0.7);
 });
 
 mapbutton.addEventListener("click", function()
@@ -131,10 +128,7 @@ function toggleOn(idx){
     var parameter = data[idx];
     var b = document.getElementById(buttons[idx]);
     
-    if (parameter == "Temp")
-        map.setPaintProperty(parameter, "heatmap-opacity", opacities[idx]);
-    else
-        map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
+    map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
     
     b.style.background = "#1d1f27";
     b.style.color = "rgb(255, 255, 255)";
@@ -150,10 +144,7 @@ function toggleOff(idx){
     var parameter = data[idx];
     var b = document.getElementById(buttons[idx]);
     
-    if (parameter == "Temp")
-        map.setPaintProperty(parameter, "heatmap-opacity", 0);
-    else
-        map.setPaintProperty(parameter, "circle-opacity", 0);
+    map.setPaintProperty(parameter, "circle-opacity", 0);
     
     b.style.background = "rgb(255, 255, 255)";
     b.style.color = "rgb(0, 0, 0)";
