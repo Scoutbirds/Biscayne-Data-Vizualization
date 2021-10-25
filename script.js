@@ -174,7 +174,7 @@ function changeLegend(val) {
         
     if (val == "sal_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #92073C, #98A1DC)";
+        c[0].style.background = "linear-gradient(to left, #F4156B, #9DA4D8)";
     }
     
     if (val == "ch_level") {
