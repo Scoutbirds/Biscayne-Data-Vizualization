@@ -32,7 +32,7 @@ var data = ["Temp", "ODO", "pH", "Salinity", "Chlorophyll","Turbidity"];
 var booldata = [1, 0, 0, 0, 0, 0];
 var buttons = ["TempButton", "ODOButton", "pHButton", "SalButton", "ChButton", "TurButton"];
 var info = ["Tempinfo", "ODOinfo", "pHinfo", "Salinityinfo", "Chlorophyllinfo", "Turbidityinfo"];
-var opacities = [0.7, 0.14, 0.2, 0.7, 0.37, 0.5];
+var opacities = [0.7, 0.14, 0.6, 0.7, 0.37, 0.5];
 
 /*For loop that turns all the data's opacity to zero*/
 map.on('load', function () 
@@ -159,32 +159,32 @@ function changeLegend(val) {
     
     if (val == "temp_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #FF0000, #00FF00, #00FFFF)";
+        c[0].style.background = "linear-gradient(to left, #FA0000, #78F7F7)";
     }
     
     if (val == "pH_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Acidic</p><p class="rightlegendtext">Alkaline</p></div>';
-        c[0].style.background = "linear-gradient(to left, #0C86B6, #7EE4F6, #FCB6F7, #AA0303)";
+        c[0].style.background = "linear-gradient(to left, #1C1D4F, #FF910A)";
     }
     
     if (val == "odo_level"){
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">High</p><p class="rightlegendtext">Low</p></div>';
-        c[0].style.background = "linear-gradient(to left, #FFA500, #FFFFFF)";
+        c[0].style.background = "linear-gradient(to left, #F7EE69, #65D350)";
     }
         
     if (val == "sal_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #A032FB, #3AF2BE)";
+        c[0].style.background = "linear-gradient(to left, #92073C, #98A1DC)";
     }
     
     if (val == "ch_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #4B11DF, #8DED73)";
+        c[0].style.background = "linear-gradient(to left, #4D16DA, #42D01B)";
     }
     
     if (val == "tur_level") {
         legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-        c[0].style.background = "linear-gradient(to left, #B6FD44, #5AEFF6)";
+        c[0].style.background = "linear-gradient(to left, #9BF40B, #5AEFF6)";
     }
 }
 
