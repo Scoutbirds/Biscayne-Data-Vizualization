@@ -163,8 +163,8 @@ function changeLegend(val) {
     }
     
     if (val == "pH_level") {
-        legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Acidic</p><p class="rightlegendtext">Alkaline</p></div>';
-        c[0].style.background = "linear-gradient(to left, #1C1D4F, #FF910A)";
+        legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Alkaline</p><p class="rightlegendtext">Acidic</p></div>';
+        c[0].style.background = "linear-gradient(to left, #FF910A, #1C1D4F)";
     }
     
     if (val == "odo_level"){

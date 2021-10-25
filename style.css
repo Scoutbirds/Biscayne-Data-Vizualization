@@ -16,7 +16,7 @@
 .map-overlay .legend .bar {
     display: block;
     max-width: 760px;
-    height: 20px;
+    height: 30px;
     background: linear-gradient(to left, #FA0000, #78F7F7);
     clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
 }
