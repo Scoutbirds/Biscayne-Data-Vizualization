@@ -126,11 +126,11 @@ function changeLegend(val) {
     var vals = ["temp_level", "odo_level", "pH_level", "sal_level", "ch_level", "tur_level"];
     var val_includes = ['\"tempbar\"','\"ODObar\"','\"pHbar\"','\"salbar\"', '\"chlbar\"','\"turbar\"'];
     var rows = ["tempRow", "ODORow", "pHRow", "salRow", "chlRow", "turRow"];
-	var row_labels = ["Temperature", "Dissolved Oxygen", "pH", "Salinity", "Chlorophyll", "Turbidity"];
+    var row_labels = ["Temperature", "Dissolved Oxygen", "pH", "Salinity", "Chlorophyll", "Turbidity"];
     var bars = ["tempbar", "ODObar", "pHbar", "salbar", "chlbar", "turbar"];
-	var left_legend = ["Low", "High", "Acidic", "Low", "Low", "Low"];
-	var right_legend = ["High", "Low", "Alkaline", "High", "High", "High"];
-	var row_gradients = ["linear-gradient(to left, #FA0000, #78F7F7)", "linear-gradient(to left, #F7EE69, #65D350)", "linear-gradient(to left, #FF910A, #1C1D4F)", "linear-gradient(to left, #F4156B, #9DA4D8)", "linear-gradient(to left, #4D16DA, #42D01B)", "linear-gradient(to left, #9BF40B, #5AEFF6)"];
+    var left_legend = ["Low", "High", "Acidic", "Low", "Low", "Low"];
+    var right_legend = ["High", "Low", "Alkaline", "High", "High", "High"];
+    var row_gradients = ["linear-gradient(to left, #FA0000, #78F7F7)", "linear-gradient(to left, #F7EE69, #65D350)", "linear-gradient(to left, #FF910A, #1C1D4F)", "linear-gradient(to left, #F4156B, #9DA4D8)", "linear-gradient(to left, #4D16DA, #42D01B)", "linear-gradient(to left, #9BF40B, #5AEFF6)"];
     var legendLabel = document.getElementById("map-overlay-legend");
     legendLabel.style.display = "block";
     
