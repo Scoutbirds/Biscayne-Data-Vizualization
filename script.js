@@ -123,65 +123,31 @@ function toggleOff(idx) {
 
 function changeLegend(val) {
 
+    var vals = ["temp_level", "odo_level", "pH_level", "sal_level", "ch_level", "tur_level"];
+    var val_includes = ['\"tempbar\"','\"ODObar\"','\"pHbar\"','\"salbar\"', '\"chlbar\"','\"turbar\"'];
+    var rows = ["tempRow", "ODORow", "pHRow", "salRow", "chlRow", "turRow"];
+	var row_labels = ["Temperature", "Dissolved Oxygen", "pH", "Salinity", "Chlorophyll", "Turbidity"];
+    var bars = ["tempbar", "ODObar", "pHbar", "salbar", "chlbar", "turbar"];
+	var left_legend = ["Low", "High", "Acidic", "Low", "Low", "Low"];
+	var right_legend = ["High", "Low", "Alkaline", "High", "High", "High"];
+	var row_gradients = ["linear-gradient(to left, #FA0000, #78F7F7)", "linear-gradient(to left, #F7EE69, #65D350)", "linear-gradient(to left, #FF910A, #1C1D4F)", "linear-gradient(to left, #F4156B, #9DA4D8)", "linear-gradient(to left, #4D16DA, #42D01B)", "linear-gradient(to left, #9BF40B, #5AEFF6)"];
     var legendLabel = document.getElementById("map-overlay-legend");
-
-    if (val == "temp_level") {
-        if (!(legendLabel.innerHTML.includes('\"tempbar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="tempRow"><div class="label"><p class="label">Temperature</p></div><div id="legend" class="legend"><div class="bar" id="tempbar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div></div></div>';
-            var t = document.getElementById("tempbar");
-            t.style.background = "linear-gradient(to left, #FA0000, #78F7F7)";
-        } else {
-            document.getElementById("tempRow").remove();
-        }
+    legendLabel.style.display = "block";
+    
+    var idx;
+    for(var i = 0; i < vals.length; i++){
+        if (val === vals[i])
+            idx = i;
     }
 
-    if (val == "pH_level") {
-        if (!(legendLabel.innerHTML.includes('\"pHbar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="pHRow"><div class="label"><p class="label">pH</p></div><div id="legend" class="legend"><div class="bar" id="pHbar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">Alkaline</p><p class="rightlegendtext">Acidic</p></div></div></div>';
-            var t = document.getElementById("pHbar");
-            t.style.background = "linear-gradient(to left, #FF910A, #1C1D4F)";
-        } else {
-            document.getElementById("pHRow").remove();
-        }
-    }
-
-    if (val == "odo_level") {
-        if (!(legendLabel.innerHTML.includes('\"ODObar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="ODORow"><div class="label"><p class="label">Dissolved Oxygen</p></div><div id="legend" class="legend"><div class="bar" id="ODObar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">High</p><p class="rightlegendtext">Low</p></div></div></div>';
-            var t = document.getElementById("ODObar");
-            t.style.background = "linear-gradient(to left, #F7EE69, #65D350)";
-        } else {
-            document.getElementById("ODORow").remove();
-        }
-    }
-
-    if (val == "sal_level") {
-        if (!(legendLabel.innerHTML.includes('\"salbar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="salRow"><div class="label"><p class="label">Salinity</p></div><div id="legend" class="legend"><div class="bar" id="salbar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div></div></div>';
-            var t = document.getElementById("salbar");
-            t.style.background = "linear-gradient(to left, #F4156B, #9DA4D8)";
-        } else {
-            document.getElementById("salRow").remove();
-        }
-    }
-
-    if (val == "ch_level") {
-        if (!(legendLabel.innerHTML.includes('\"chlbar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="chlRow"><div class="label"><p class="label">Chlorophyll</p></div><div id="legend" class="legend"><div class="bar" id="chlbar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div></div></div>';
-            var t = document.getElementById("chlbar");
-            t.style.background = "linear-gradient(to left, #4D16DA, #42D01B)";
-        } else {
-            document.getElementById("chlRow").remove();
-        }
-    }
-
-    if (val == "tur_level") {
-        if (!(legendLabel.innerHTML.includes('\"turbar\"'))) {
-            legendLabel.innerHTML += '<div class="row" id="turRow"><div class="label"><p class="label">Turbidity</p></div><div id="legend" class="legend"><div class="bar" id="turbar"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div></div></div>';
-            var t = document.getElementById("turbar");
-            t.style.background = "linear-gradient(to left, #9BF40B, #5AEFF6)";
-        } else {
-            document.getElementById("turRow").remove();
+    if (!(legendLabel.innerHTML.includes(val_includes[idx]))) {
+        legendLabel.innerHTML += '<div class="row" id=\"' + rows[idx] + '\"><div class="label"><p class="label">' + row_labels[idx] + '</p></div><div id="legend" class="legend"><div class="bar" id=\"' + bars[idx] + '\"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">' + left_legend[idx] + '</p><p class="rightlegendtext">' + right_legend[idx] + '</p></div></div></div>';
+        var t = document.getElementById(bars[idx]);
+        t.style.background = row_gradients[idx];
+    } else {
+        document.getElementById(rows[idx]).remove();
+        if (!(legendLabel.innerHTML.includes('\"row\"'))) {
+            legendLabel.style.display = "none";
         }
     }
 }
