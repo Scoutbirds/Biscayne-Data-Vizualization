@@ -280,7 +280,7 @@ body {
   max-width: 760px;
   height: 30px;
   background: linear-gradient(to left, #fa0000, #78f7f7);
-  clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 40%, 0% 100%, 100% 100%);
 }
 
 .map-overlay .map-overlay-inner {
