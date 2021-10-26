@@ -63,65 +63,43 @@ document.getElementById("Tempinfo").style.display = "inline"
 
 TempButton.addEventListener("click", function()
 {
-    // Toggle true or false
-    booldata[0] = !booldata[0];
-    
-    if (booldata[0])
-        toggleOn(0)
-    else 
-        toggleOff(0)
+    toggleEvent(0)
 })
 
 ODOButton.addEventListener("click", function()
 {
-    booldata[1] = !booldata[1];
-    
-    if (booldata[1])
-        toggleOn(1)
-    else 
-        toggleOff(1)
+    toggleEvent(1)
 })
 
 pHButton.addEventListener("click", function()
 {
-    booldata[2] = !booldata[2];
-    
-    if (booldata[2])
-        toggleOn(2)
-    else 
-        toggleOff(2)
+    toggleEvent(2)
 })
-
 
 SalButton.addEventListener("click", function()
 {
-    booldata[3] = !booldata[3];
-    
-    if (booldata[3])
-        toggleOn(3)
-    else 
-        toggleOff(3)
+    toggleEvent(3)
 })
 
 ChButton.addEventListener("click", function()
 {
-    booldata[4] = !booldata[4];
-    
-    if (booldata[4])
-        toggleOn(4)
-    else 
-        toggleOff(4)
+    toggleEvent(4)
 })
 
 TurButton.addEventListener("click", function()
 {    
-    booldata[5] = !booldata[5];
-    
-    if (booldata[5])
-        toggleOn(5)
-    else 
-        toggleOff(5)
+    toggleEvent(5)
 })
+
+function toggleEvent(i){
+    // Toggle true or false
+       booldata[i] = !booldata[i];
+       
+       if (booldata[i])
+           toggleOn(i)
+       else 
+           toggleOff(i)
+}
 
 function toggleOn(idx){
     
