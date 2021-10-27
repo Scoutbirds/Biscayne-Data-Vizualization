@@ -341,3 +341,13 @@ body {
 }
 /*=== Map Key Legend end ===*/
 
+.twitter-feed-container {
+  display: flex;
+  justify-content: center;
+}
+
+.twitter-feed {
+  width: 1200px;
+  height: 50px;
+}
+
