@@ -117,7 +117,6 @@ function mRBLightOn(idx) {
 function mRBLightOff(idx) {
   if (idx >= 0) {
     var b = document.getElementById(buttons[idx]);
-    console.log(b.style.background);
     if (b.style.background == "rgb(218, 165, 32)") {
       b.style.background = "#1d1f27";
       b.style.color = "rgb(255, 255, 255)";
