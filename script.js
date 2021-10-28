@@ -98,12 +98,26 @@ TurButton.addEventListener("click", function () {
   toggleEvent(5);
 });
 
+var mostRecentButton = 0;
+
 function toggleEvent(i) {
   // Toggle true or false
   booldata[i] = !booldata[i];
 
   if (booldata[i]) toggleOn(i);
   else toggleOff(i);
+}
+
+function mRBLightOn(idx) {
+  var b = document.getElementById(buttons[idx]);
+  b.style.background = "#DAA520";
+  b.style.color = "rgb(255, 255, 255)";
+}
+
+function mRBLightOff(idx) {
+  var b = document.getElementById(buttons[idx]);
+  b.style.background = "#1d1f27";
+  b.style.color = "rgb(255, 255, 255)";
 }
 
 function toggleOn(idx) {
@@ -114,6 +128,10 @@ function toggleOn(idx) {
 
   b.style.background = "#1d1f27";
   b.style.color = "rgb(255, 255, 255)";
+  console.log(mostRecentButton);
+  mRBLightOff(mostRecentButton);
+  mostRecentButton = idx;
+  mRBLightOn(mostRecentButton);
 
   for (var i = 0; i < info.length; i++)
     document.getElementById(info[i]).style.display = "none";
