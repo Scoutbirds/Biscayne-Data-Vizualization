@@ -130,9 +130,6 @@ function toggleOn(idx) {
 
   map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
 
-  b.style.background = "#1d1f27";
-  b.style.color = "rgb(255, 255, 255)";
-  console.log(mostRecentButton);
   mRBLightOff(mostRecentButton);
   mostRecentButton = idx;
   mRBLightOn(mostRecentButton);
