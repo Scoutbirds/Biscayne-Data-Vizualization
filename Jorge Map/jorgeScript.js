@@ -1,39 +1,63 @@
+// Mapbox data
 mapboxgl.accessToken =
-  "pk.eyJ1Ijoic2NvdXRiaXJkcyIsImEiOiJja3Q5ZWl1bmcxYmVqMnBuenduejVvNTdiIn0.YP8oU2KJ4nrwd5IdPIo3XQ";
+  "pk.eyJ1IjoiamZlcm4wNzUiLCJhIjoiY2t0MnpuaXphMHNpMzJ1bnhjeWlxNTQ5MyJ9.o1NOIZ1hRvQcXmR7jxAtLQ";
 var map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/scoutbirds/cktmgxnmt2tjy17o3tovbe9k0",
+  style: "mapbox://styles/jfern075/ckt5s06110bdx17nk6tcacn53",
   center: [-80.15, 25.85], // starting position [lng, lat]
   zoom: 12, // starting zoom
   maxZoom: 14, // max zoom in
-  minZoom: 11 // max zoom out
+  minZoom: 11, // max zoom out
 });
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
 
-// const coralGables = new mapboxgl.Marker()
-//   .setLngLat([-80.26966, 25.72695])
-//   .addTo(map);
+const coralGables = new mapboxgl.Marker()
+  .setLngLat([-80.26966, 25.72695])
+  .addTo(map);
 
-// // Buoy 2
-// const northBiscayneBay = new mapboxgl.Marker()
-//   .setLngLat([-80.16712, 25.86171])
-//   .addTo(map);
+// Buoy 2
+const northBiscayneBay = new mapboxgl.Marker()
+  .setLngLat([-80.16712, 25.86171])
+  .addTo(map);
 
-// // Buoy 3
-// const littleRiver = new mapboxgl.Marker()
-//   .setLngLat([-80.176921, 25.846346])
-//   .addTo(map);
+// Buoy 3
+const littleRiver = new mapboxgl.Marker()
+  .setLngLat([-80.176921, 25.846346])
+  .addTo(map);
 
-var data = ["Temp", "Salinity", "ODO", "Chlorophyll", "Turbidity", "pH"];
+//---------------------------------------------------------------------
+// Parameter Logic starts here
+
+var data = ["Temp", "ODO", "pH", "Salinity", "Chlorophyll", "Turbidity"];
+var booldata = [true, false, false, false, false, false];
+var buttons = [
+  "TempButton",
+  "ODOButton",
+  "pHButton",
+  "SalButton",
+  "ChButton",
+  "TurButton",
+];
+var info = [
+  "Tempinfo",
+  "ODOinfo",
+  "pHinfo",
+  "Salinityinfo",
+  "Chlorophyllinfo",
+  "Turbidityinfo",
+];
+var opacities = [0.7, 0.14, 0.6, 0.7, 0.37, 0.5];
 
 /*For loop that turns all the data's opacity to zero*/
 map.on("load", function () {
+  changeLegend("temp_level");
   for (var i = 0; i < data.length; i++) {
     map.setPaintProperty(data[i], "circle-opacity", 0);
   }
-  map.setPaintProperty("Temp", "circle-opacity", 1); //turns Temperature data opacity to 1
-  changeLegend("temp_level");
+  document.getElementById("TempButton").style.background = "#1d1f27";
+  document.getElementById("TempButton").style.color = "rgb(255, 255, 255)";
+  map.setPaintProperty("Temp", "circle-opacity", 0.7);
 });
 
 mapbutton.addEventListener("click", function () {
@@ -44,14 +68,8 @@ mapbutton.addEventListener("click", function () {
   });
 });
 
-var info = [
-  "Tempinfo",
-  "ODOinfo",
-  "pHinfo",
-  "Salinityinfo",
-  "Chlorophyllinfo",
-  "Turbidityinfo",
-];
+document.getElementById("ODOinfo").style.display = "inline";
+
 
 for (var i = 0; i < info.length; i++) {
   document.getElementById(info[i]).style.display = "none";
@@ -59,137 +77,122 @@ for (var i = 0; i < info.length; i++) {
 
 document.getElementById("Tempinfo").style.display = "inline";
 
-
-//TEMPERATURE
 TempButton.addEventListener("click", function () {
-  //Makes all the categories opacity zero
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-
-  //makes the temperature category 1
-  map.setPaintProperty("Temp", "circle-opacity", 1);
-  document.getElementById("Tempinfo").style.display = "inline";
+  toggleEvent(0);
 });
 
-
-//PH
-pHButton.addEventListener("click", function () {
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-
-  map.setPaintProperty("pH", "circle-opacity", 1);
-  document.getElementById("pHinfo").style.display = "inline";
-});
-
-
-
-//ODO
 ODOButton.addEventListener("click", function () {
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-
-  map.setPaintProperty("ODO", "circle-opacity", 1);
-
-  document.getElementById("ODOinfo").style.display = "inline";
+  toggleEvent(1);
 });
 
+pHButton.addEventListener("click", function () {
+  toggleEvent(2);
+});
 
-//Salinity
 SalButton.addEventListener("click", function () {
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-  map.setPaintProperty("Salinity", "circle-opacity", 1);
-
-  document.getElementById("Salinityinfo").style.display = "inline";
+  toggleEvent(3);
 });
 
-
-//Chlorophyll
 ChButton.addEventListener("click", function () {
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-  map.setPaintProperty("Chlorophyll", "circle-opacity", 1);
-
-  document.getElementById("Chlorophyllinfo").style.display = "inline";
+  toggleEvent(4);
 });
 
-
-//Turbididty
 TurButton.addEventListener("click", function () {
-  for (var i = 0; i < data.length; i++) {
-    map.setPaintProperty(data[i], "circle-opacity", 0);
-  }
-
-  for (var i = 0; i < info.length; i++) {
-    document.getElementById(info[i]).style.display = "none";
-  }
-  map.setPaintProperty("Turbidity", "circle-opacity", 1);
-
-  document.getElementById("Turbidityinfo").style.display = "inline";
+  toggleEvent(5);
 });
 
+function toggleEvent(i) {
+  // Toggle true or false
+  booldata[i] = !booldata[i];
 
+  if (booldata[i]) toggleOn(i);
+  else toggleOff(i);
+}
 
-///=========================================================================
-// to change the map legend key
+function toggleOn(idx) {
+  var parameter = data[idx];
+  var b = document.getElementById(buttons[idx]);
+
+  map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
+
+  b.style.background = "#1d1f27";
+  b.style.color = "rgb(255, 255, 255)";
+
+  for (var i = 0; i < info.length; i++)
+    document.getElementById(info[i]).style.display = "none";
+
+  document.getElementById(info[idx]).style.display = "inline";
+}
+
+function toggleOff(idx) {
+  var parameter = data[idx];
+  var b = document.getElementById(buttons[idx]);
+
+  map.setPaintProperty(parameter, "circle-opacity", 0);
+
+  b.style.background = "rgb(255, 255, 255)";
+  b.style.color = "rgb(0, 0, 0)";
+}
+
 function changeLegend(val) {
-  document.getElementById("map-overlay-legend").style.display = "block";
+  var vals = [
+    "temp_level",
+    "odo_level",
+    "pH_level",
+    "sal_level",
+    "ch_level",
+    "tur_level",
+  ];
+  var bars = ["tempbar", "ODObar", "pHbar", "salbar", "chlbar", "turbar"];
+  var rows = ["tempRow", "ODORow", "pHRow", "salRow", "chlRow", "turRow"];
+  var row_labels = [
+    "Temperature",
+    "Dissolved Oxygen",
+    "pH",
+    "Salinity",
+    "Chlorophyll",
+    "Turbidity",
+  ];
+  var left_legend = ["Low", "High", "Alkaline", "Low", "Low", "Low"];
+  var right_legend = ["High", "Low", "Acidic", "High", "High", "High"];
+  var row_gradients = [
+    "linear-gradient(to left, #FA0000, #78F7F7)",
+    "linear-gradient(to left, #F7EE69, #65D350)",
+    "linear-gradient(to left, #FF910A, #1C1D4F)",
+    "linear-gradient(to left, #F4156B, #9DA4D8)",
+    "linear-gradient(to left, #4D16DA, #42D01B)",
+    "linear-gradient(to left, #9BF40B, #5AEFF6)",
+  ];
 
-  var legend = document.getElementById("gradNum");
-  var c = document.getElementsByClassName("bar");
-  
-  if (val == "temp_level") {
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-      c[0].style.background = "linear-gradient(to left, #FF0000, #00FF00, #00FFFF)";
+  // Grab map-overlay-legend div, set display to block
+  var legendLabel = document.getElementById("map-overlay-legend");
+  legendLabel.style.display = "block";
+
+  // Fetch index with input val
+  var idx;
+  for (var i = 0; i < vals.length; i++) {
+    if (val === vals[i]) idx = i;
   }
-  
-  if (val == "pH_level") {
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Acidic</p><p class="rightlegendtext">Alkaline</p></div>';
-      c[0].style.background = "linear-gradient(to left, #0C86B6, #7EE4F6, #FCB6F7, #AA0303)";
-  }
-  
-  if (val == "odo_level"){
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-      c[0].style.background = "linear-gradient(to left, #FFFFFF, #FFA500)";
-  }
-      
-  if (val == "sal_level") {
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-      c[0].style.background = "linear-gradient(to left, #A032FB, #3AF2BE)";
-  }
-  
-  if (val == "ch_level") {
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-      c[0].style.background = "linear-gradient(to left, #4B11DF, #8DED73)";
-  }
-  
-  if (val == "tur_level") {
-      legend.innerHTML = '<div class="legendtext"><p class="leftlegendtext">Low</p><p class="rightlegendtext">High</p></div>';
-      c[0].style.background = "linear-gradient(to left, #B6FD44, #5AEFF6)";
+
+  // Use index value and arrays to populate legends
+  if (!legendLabel.innerHTML.includes(bars[idx])) {
+    legendLabel.innerHTML +=
+      '<div class="row" id="' +
+      rows[idx] +
+      '"><div class="label"><p class="label">' +
+      row_labels[idx] +
+      '</p></div><div id="legend" class="legend"><div class="bar" id="' +
+      bars[idx] +
+      '"></div><div class="gradContainer" id="gradNum"></div><div class="legendtext"><p class="leftlegendtext">' +
+      left_legend[idx] +
+      '</p><p class="rightlegendtext">' +
+      right_legend[idx] +
+      "</p></div></div></div>";
+    document.getElementById(bars[idx]).style.background = row_gradients[idx];
+  } else {
+    document.getElementById(rows[idx]).remove();
+    if (!legendLabel.innerHTML.includes('"row"')) {
+      legendLabel.style.display = "none";
+    }
   }
 }
