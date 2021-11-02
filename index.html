@@ -9,7 +9,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mapLayer.css">
-    <link rel="stylesheet" href="css/layers.css">
+    <link rel="stylesheet" href="css/legend.css">
     
     <!-- mapbox -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
@@ -31,13 +31,12 @@
     </div>
  
     <!-- map -->
-<!--
+
     <div id="map"></div>
--->
 
     <!-- javascript -->
     <script src="javascript/main.js"></script>
-     
+    <script src="javascript/dataInfo.js"></script>
     
     <!-- map console -->
     <div id="mapConsole">
@@ -51,9 +50,8 @@
     </div>
 
 
-
     <!-- Layer Console -->
-    <div id="mapKeyLegend">
+    <div id="mapLegend">
       <!-- drop down list of the data -->
       <div class="dropDownList">
         <select name="dataLayers" id="dataLayer" onchange="changeLegend()">
@@ -75,10 +73,17 @@
     </div>
     <!-- layer console end -->
 
-<script>
-
-</script>
-
-
+    <!-- Data info console -->
+    <div class='data-info'>
+      <div><strong>Date:</strong> <span id='date_info'></span></div>
+      <div><strong>Time:</strong> <span id='time_info'></span></div>
+      <div><strong>Temp °C:</strong> <span id='temp_info'></span></div>
+      <div><strong>pH:</strong> <span id='ph_info'></span></div>
+      <div><strong>odo:</strong> <span id='odo_info'></span></div>
+      <div><strong>Turbidity:</strong> <span id='turbidity_info'></span></div>
+      <div><strong>Salinity:</strong> <span id='salinity_info'></span></div>
+      <div><strong>Chlorophyll:</strong> <span id='chlorophyll_info'></span></div>
+    </div>
+    <!-- Data info console end -->
   </body>
 </html>
