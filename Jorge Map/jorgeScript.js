@@ -60,13 +60,50 @@ map.on("load", function () {
   map.setPaintProperty("Temp", "circle-opacity", 0.7);
 });
 
-mapbutton.addEventListener("click", function () {
+
+
+
+
+navAbout.addEventListener("click", function () {
   window.scrollTo({
-    top: 1300,
+    top: 800,
     left: 0,
     behavior: "smooth",
   });
 });
+
+
+
+navSocial.addEventListener("click", function () {
+  window.scrollTo({
+    top: 3200,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+
+mapbutton.addEventListener("click", function () {
+  window.scrollTo({
+    top: 1650,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+
+navmap.addEventListener("click", function () {
+  window.scrollTo({
+    top: 1650,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+
+
+
+
 
 document.getElementById("ODOinfo").style.display = "inline";
 
