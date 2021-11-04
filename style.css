@@ -21,7 +21,7 @@
   margin-top: 12px;
   text-align: center;
   background-image: url("fiualonetransreverse.png");
-  background-position:center;
+  background-position: center;
 
   height: 30px;
   width: 16%;
@@ -29,19 +29,16 @@
   background-size: contain;
 }
 
-.navbuttongroup{
+.navbuttongroup {
   object-fit: cover;
   margin-left: 15%;
   margin-right: 35%;
   width: 30%;
   height: 100%;
   float: left;
-
-
-
 }
 
-.navbutton{
+.navbutton {
   float: left;
   margin-top: 12px;
   width: 20%;
@@ -49,7 +46,7 @@
   margin-left: 6.666%;
   top: 60px;
   font-size: 25px;
-  font-family:'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
   border: 0px;
   background-color: #081e3f00;
@@ -57,36 +54,31 @@
   padding-bottom: 5px;
   transition-duration: 0.3s;
   color: white;
-  
 }
 
-.navbutton:hover{
+.navbutton:hover {
   cursor: pointer;
-  color: #FFCC00;
-
+  color: #ffcc00;
 }
 
-#navmap{
-  background-color: #FFCC00;
+#navmap {
+  background-color: #ffcc00;
   border-radius: 10px;
   text-decoration: none;
   transition-duration: 0.3s;
   color: black;
-
 
   animation-name: colorchange;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
-#navmap:hover{
-  background-color: #FFCC00;
+#navmap:hover {
+  background-color: #ffcc00;
   cursor: pointer;
   color: rgb(16, 20, 36);
   box-shadow: 0 0px 20px rgb(245, 252, 147);
-  
 }
-
 
 .firstpage {
   height: 800px;
@@ -104,22 +96,23 @@
   font-size: 100px;
   padding-top: 200px;
   width: 100%;
-  
+
   color: rgb(255, 255, 255);
   text-align: center;
 }
 
 #mapbutton {
   padding: 10px 60px;
-  border: none;
   color: rgb(0, 0, 0);
   background-color: rgb(16, 20, 36);
   background-color: rgb(241, 243, 125);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 30px;
   font-weight: 400;
   transition-duration: 0.3s;
   border-radius: 10px;
+  outline-width: 10px;
+  outline-color: black;
 
   animation-name: colorchange;
   animation-duration: 3s;
@@ -176,7 +169,7 @@
 }
 
 .wave .shape-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 .biscayne {
@@ -241,7 +234,6 @@ body {
 
 .optionbuttons {
   background-color: rgb(255, 255, 255);
-  border: none;
   color: rgb(0, 0, 0);
   width: 16.66666%;
   /* display:Block; */
@@ -430,4 +422,3 @@ body {
   width: 1200px;
   height: 50px;
 }
-
