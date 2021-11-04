@@ -61,9 +61,7 @@ map.on("load", function () {
 });
 
 
-
-
-
+// Navigation buttons
 navAbout.addEventListener("click", function () {
   window.scrollTo({
     top: 800,
@@ -72,7 +70,13 @@ navAbout.addEventListener("click", function () {
   });
 });
 
-
+navmap.addEventListener("click", function () {
+  window.scrollTo({
+    top: 1650,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
 navSocial.addEventListener("click", function () {
   window.scrollTo({
@@ -81,7 +85,6 @@ navSocial.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
-
 
 mapbutton.addEventListener("click", function () {
   window.scrollTo({
@@ -92,20 +95,7 @@ mapbutton.addEventListener("click", function () {
 });
 
 
-navmap.addEventListener("click", function () {
-  window.scrollTo({
-    top: 1650,
-    left: 0,
-    behavior: "smooth",
-  });
-});
 
-
-
-
-
-
-document.getElementById("ODOinfo").style.display = "inline";
 
 
 for (var i = 0; i < info.length; i++) {
@@ -138,6 +128,8 @@ TurButton.addEventListener("click", function () {
   toggleEvent(5);
 });
 
+var mostRecentButton = -1;
+
 function toggleEvent(i) {
   // Toggle true or false
   booldata[i] = !booldata[i];
@@ -146,14 +138,31 @@ function toggleEvent(i) {
   else toggleOff(i);
 }
 
+function mRBLightOn(idx) {
+  var b = document.getElementById(buttons[idx]);
+  b.style.background = "rgb(218, 165, 32)";
+  b.style.color = "rgb(255, 255, 255)";
+}
+
+function mRBLightOff(idx) {
+  if (idx >= 0) {
+    var b = document.getElementById(buttons[idx]);
+    if (b.style.background == "rgb(218, 165, 32)") {
+      b.style.background = "#1d1f27";
+      b.style.color = "rgb(255, 255, 255)";
+    }
+  }
+}
+
 function toggleOn(idx) {
   var parameter = data[idx];
   var b = document.getElementById(buttons[idx]);
 
   map.setPaintProperty(parameter, "circle-opacity", opacities[idx]);
 
-  b.style.background = "#1d1f27";
-  b.style.color = "rgb(255, 255, 255)";
+  mRBLightOff(mostRecentButton);
+  mostRecentButton = idx;
+  mRBLightOn(mostRecentButton);
 
   for (var i = 0; i < info.length; i++)
     document.getElementById(info[i]).style.display = "none";

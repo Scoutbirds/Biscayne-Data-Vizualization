@@ -158,7 +158,7 @@
   box-shadow: 0px 0px 50px -20px;
 }
 
-.custom-shape-divider-bottom-1635979568 {
+.wave {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -168,22 +168,20 @@
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1635979568 svg {
+.wave svg {
   position: relative;
   display: block;
   width: calc(103% + 1.3px);
   height: 161px;
 }
 
-.custom-shape-divider-bottom-1635979568 .shape-fill {
+.wave .shape-fill {
   fill: #FFFFFF;
 }
 
-
 .biscayne {
-  padding-top: 50px;
+  padding-top: 70px;
   margin-bottom: 100px;
-  position: relative;
 }
 
 .Title {
@@ -207,7 +205,6 @@
   margin: 0% 20%;
   line-height: 1.5;
 }
-
 
 body {
   margin: 0;
@@ -430,32 +427,7 @@ body {
 }
 
 .twitter-feed {
-  width: 100px;
+  width: 1200px;
   height: 50px;
-}
-
-.big_box{
-  height: 500px;
-  background-color: #1d1f27;
-  margin-bottom: 100px;
-  display: block;
-}
-
-.box{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  margin: 0% 10%;
-}
-
-.boxes{
-  background-color: rgba(255, 255, 255, 1);
-  padding: 20px;
-  font-size: 30px;
-  margin: 10px;
-}
-
-.data-width{
-
 }
 
