@@ -241,8 +241,8 @@ body {
   /* display:Block; */
   float: left;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 1.8vw;
+  font-weight: 500;
   padding: 31px 0px;
   transition-duration: 0.3s;
 }
