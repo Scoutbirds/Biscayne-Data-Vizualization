@@ -113,6 +113,7 @@
   border-radius: 10px;
   outline-width: 10px;
   outline-color: black;
+  border:none;
 
   animation-name: colorchange;
   animation-duration: 3s;
