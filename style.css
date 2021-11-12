@@ -1,3 +1,7 @@
+html { scroll-behavior: smooth; } 
+
+
+
 .navbar {
   top: 0px;
   display: flex;
@@ -39,6 +43,8 @@
 }
 
 .navbutton {
+  display: flex;
+  justify-content: center;
   float: left;
   width: 22%;
   margin-right: 5.666%;
@@ -53,6 +59,7 @@
   padding-bottom: 5px;
   transition-duration: 0.3s;
   color: white;
+  text-decoration: none;
 }
 
 .navbutton:hover {
@@ -61,6 +68,8 @@
 }
 
 #navmap {
+  display: flex;
+  justify-content: center;
   width: 22%;
   margin-right: 5.666%;
   margin-left: 5.666%;
@@ -176,7 +185,8 @@
 }
 
 .biscayne {
-  padding-top: 70px;
+  padding-top: 100px;
+  margin-top: -30px;
   margin-bottom: 100px;
 }
 
@@ -208,14 +218,13 @@ body {
 }
 
 .mapcontainer {
-  top: 0;
   bottom: 0;
   height: 850px;
+  padding-top: 100px;
+  margin-top: -100px;
   position: relative;
-  padding-bottom: 0%;
-  padding-top: 2%;
-  margin: 0% 0%;
   background-color: rgb(255, 255, 255);
+  margin-bottom: 50px;
 }
 
 #map {
@@ -277,7 +286,7 @@ body {
 
 .information {
   height: 500px;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
 }
 
 .informationBox {
@@ -347,7 +356,7 @@ body {
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
   width: 200px;
-  top: 0;
+  top: 60px;
   right: 55px;
   padding: 110px;
 }

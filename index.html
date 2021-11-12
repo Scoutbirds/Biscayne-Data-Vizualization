@@ -16,9 +16,9 @@
   <div class = "navbar">
     <div class = "FIU"></div>
     <div class="navbuttongroup">
-      <button class="navbutton" id = "navAbout">About</button>
-      <button class="navbutton" id = "navmap" >Map</button>
-      <button class="navbutton" id = "navSocial">Social</button>
+      <a href = "#aboutPosition" class="navbutton">About</a>
+      <a href = "#mapPosition" class="navbutton" id = "navmap" >Map</a>
+      <a href = "#socialPosition" class="navbutton">Social</a>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
 
 
 
-    <div class="biscayne">
+    <div id = "aboutPosition" class="biscayne">
       <p class="Title">BISCAYNE BAY DATA</p>
       <div class="info">
         <p> As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization and climate change have all contributed to the precipitous decline of our iconic bay. <br>
@@ -54,9 +54,7 @@
       </div>
     </div>
 
-
-
-    <div class="mapcontainer">
+    <div id = "mapPosition" class="mapcontainer">
       <p class="Title">MAP</p>
       <div id="map"></div>
       <div class="map-overlay top">
@@ -115,7 +113,7 @@
         </p>
       </div>
     </div>
-    <p class="Title">FOLLOW US ON TWITTER</p>
+    <p id = "socialPosition" class="Title">FOLLOW US ON TWITTER</p>
     <div class="twitter-feed-container">
       <div class="twitter-feed">
         <a class="twitter-timeline" data-width="1200" data-theme="dark" data-tweet-limit="3" href="https://twitter.com/FIUEnvironment?ref_src=twsrc%5Etfw">Tweets by FIUEnvironment</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -61,41 +61,6 @@ map.on("load", function () {
 });
 
 
-// Navigation buttons
-navAbout.addEventListener("click", function () {
-  window.scrollTo({
-    top: 800,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
-navmap.addEventListener("click", function () {
-  window.scrollTo({
-    top: 1650,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
-navSocial.addEventListener("click", function () {
-  window.scrollTo({
-    top: 3200,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
-mapbutton.addEventListener("click", function () {
-  window.scrollTo({
-    top: 1650,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
-
-
 
 
 for (var i = 0; i < info.length; i++) {
