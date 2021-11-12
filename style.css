@@ -52,6 +52,7 @@ html { scroll-behavior: smooth; }
   top: 60px;
   font-size: 25px;
   font-family: "Ubuntu", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   border: 0px;
   background-color: #081e3f00;
@@ -102,11 +103,12 @@ html { scroll-behavior: smooth; }
 }
 
 .firstmessage {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 6.5vw;
   padding-top: 200px;
   width: 100%;
+  font-style: italic;
 
   color: rgb(255, 255, 255);
   text-align: center;
@@ -118,13 +120,15 @@ html { scroll-behavior: smooth; }
   background-color: rgb(16, 20, 36);
   background-color: rgb(241, 243, 125);
   font-family: "Ubuntu", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 500;
   transition-duration: 0.3s;
   border-radius: 10px;
   outline-width: 10px;
   outline-color: black;
   border:none;
+  text-decoration: none;
 
   animation-name: colorchange;
   animation-duration: 3s;
@@ -223,8 +227,27 @@ body {
   padding-top: 100px;
   margin-top: -100px;
   position: relative;
-  background-color: rgb(255, 255, 255);
-  margin-bottom: 50px;
+  background-color: rgb(244, 247, 250);
+}
+
+.mapwave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.mapwave svg {
+  position: relative;
+  display: block;
+  width: calc(167% + 1.3px);
+  height: 93px;
+}
+
+.mapwave .shape-fill {
+  fill: #FFFFFF;
 }
 
 #map {
@@ -246,16 +269,17 @@ body {
 }
 
 .optionbuttons {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.753);
   border: 1px solid #1d1f27;
   width: 16.66666%;
   /* display:Block; */
   float: left;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.8vw;
-  font-weight: 500;
-  padding: 31px 0px;
+  font-weight: 400;
+  padding: 25px 0px;
   transition-duration: 0.3s;
+  color: #1b2129;
 }
 
 .optionbuttons:hover {
@@ -285,8 +309,10 @@ body {
 }
 
 .information {
-  height: 500px;
-  margin-bottom: 400px;
+  height: 800px;
+  margin-bottom: 100px;
+  background-color: rgb(244, 247, 250);
+  position: relative;
 }
 
 .informationBox {
@@ -295,6 +321,7 @@ body {
   width: 70%;
   height: fit-content;
   margin: 1% 15%;
+  background-color: white;
   box-shadow: 0px 10px 20px rgb(216, 213, 213);
   color: rgb(0, 0, 0);
 
@@ -349,6 +376,32 @@ body {
     opacity: 1;
   }
 }
+
+
+.endmapWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.endmapWave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 72px;
+  transform: rotateY(180deg);
+}
+
+.endmapWave .shape-fill {
+  fill: #FFFFFF;
+}
+
+
+
 
 /*=== Map Key Legend begin ===*/
 

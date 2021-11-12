@@ -10,7 +10,7 @@
   </head>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap');
   </style>
 
   <div class = "navbar">
@@ -27,7 +27,7 @@
     <div class="firstpage">
       <div class="firstmessage">
         <div> Biscayne <br>Visualization </div>
-        <button id="mapbutton">Map</button>
+        <a href = "#mapPosition" id="mapbutton">Map</a>
       </div>
 
       <div class="wave">
@@ -54,7 +54,14 @@
       </div>
     </div>
 
+
+
     <div id = "mapPosition" class="mapcontainer">
+      <div class="mapwave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
       <p class="Title">MAP</p>
       <div id="map"></div>
       <div class="map-overlay top">
@@ -69,6 +76,9 @@
         <button class="optionbuttons" id="TurButton" onclick="changeLegend('tur_level')">Turbidity</button>
       </div>
     </div>
+
+
+
     <div class="information">
       <div class="informationBox" id="Tempinfo">
         <p class="informationTitle">Temperature</p>
@@ -94,7 +104,17 @@
       </div>
       <div class="informationBox" id="ODOinfo">
         <p class="informationTitle">Dissolved Oxygen</p>
-        <p class="infoText"> Dissolved oxygen (DO) is the amount of oxygen that is present in water. Although water molecules do contain an oxygen atom, this oxygen is not what is needed by aquatic organisms. </p>
+        <p class="infoText"> Dissolved oxygen (DO) is the amount of oxygen that is present in water. Although water molecules do contain an oxygen atom, 
+          this oxygen is not what is needed by aquatic organisms. 
+          <br/>
+          <br/>
+          Waters with less than 0.2 mg/L of dissolved oxygen are called anoxic and are unable to support most forms of life. 
+          Waters with no measurable dissolved oxygen are called hypoxic. A fundamental effect of hypoxia is the loss of energy from the Bay’s food chain. 
+          By precluding or stunting the growth of bottom-dwellers such as clams and worms, hypoxia robs their predators of an important source of nutrition.
+          <br>
+          <br>
+          <a href="https://www.vims.edu/research/topics/dead_zones/impacts/index.php">Reference</a>
+        </p>
       </div>
       <div class="informationBox" id="Salinityinfo">
         <p class="informationTitle">Salinity</p>
@@ -102,7 +122,8 @@
       </div>
       <div class="informationBox" id="Chlorophyllinfo">
         <p class="informationTitle">Chlorophyll</p>
-        <p class="infoText">INFO</p>
+        <p class="infoText">Chlorophyll is the natural compound present in green plants that gives them their color. 
+          It helps plants to absorb energy from the sun as they undergo the process of photosynthesis.</p>
       </div>
       <div class="informationBox" id="Turbidityinfo">
         <p class="informationTitle">Turbidity</p>
@@ -112,7 +133,19 @@
           <a href="https://www.pca.state.mn.us/sites/default/files/wq-iw3-21.pdf">Reference</a>
         </p>
       </div>
+
+      <div class="endmapWave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
     </div>
+
+
+
+
+
+
     <p id = "socialPosition" class="Title">FOLLOW US ON TWITTER</p>
     <div class="twitter-feed-container">
       <div class="twitter-feed">
