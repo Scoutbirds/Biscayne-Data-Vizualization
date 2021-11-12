@@ -423,6 +423,7 @@ body {
 }
 
 .map-overlay .map-overlay-inner {
+  text-align: center;
   color: #fff;
   background-color: #1b2129;
   border-radius: 3px;
@@ -461,7 +462,6 @@ body {
 
 .label {
   display: inline;
-  padding-left: 32px;
 }
 
 .label p {
