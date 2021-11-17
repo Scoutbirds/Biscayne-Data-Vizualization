@@ -60,9 +60,6 @@ map.on("load", function () {
   map.setPaintProperty("Temp", "circle-opacity", 0.7);
 });
 
-
-
-
 for (var i = 0; i < info.length; i++) {
   document.getElementById(info[i]).style.display = "none";
 }
@@ -112,7 +109,10 @@ function mRBLightOn(idx) {
 function mRBLightOff(idx) {
   if (idx >= 0) {
     var b = document.getElementById(buttons[idx]);
-    if (b.style.background == "rgb(218, 165, 32)") {
+    if (
+      b.style.background == "rgb(218, 165, 32)" ||
+      b.style.background.includes("rgb(218, 165, 32)")
+    ) {
       b.style.background = "#1d1f27";
       b.style.color = "rgb(255, 255, 255)";
     }
