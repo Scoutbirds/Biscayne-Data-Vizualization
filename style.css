@@ -275,7 +275,7 @@ body {
   /* display:Block; */
   float: left;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.8vw;
+  font-size: calc(4px + 1.4vw);
   font-weight: 400;
   padding: 25px 0px;
   transition-duration: 0.3s;
@@ -309,7 +309,7 @@ body {
 }
 
 .information {
-  height: 800px;
+  height: 900px;
   margin-bottom: 100px;
   background-color: rgb(244, 247, 250);
   position: relative;
@@ -356,10 +356,11 @@ body {
 .infoText {
   padding-bottom: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: calc(11px + 1vw);
   margin: 2% 10%;
   line-height: 1.5;
   opacity: 0;
+  
 
   animation-name: show;
   animation-duration: 1.5s;
