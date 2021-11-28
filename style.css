@@ -2,6 +2,8 @@ html { scroll-behavior: smooth; }
 
 
 
+
+
 .navbar {
   top: 0px;
   display: flex;
@@ -92,25 +94,31 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 0px 20px rgb(245, 252, 147);
 }
 
+
+#myVideo {
+  width: 100%;
+  height: auto;
+}
+
 .firstpage {
-  height: 800px;
-  background-image: url("nattu-adnan-Ai2TRdvI6gM-unsplash.jpg");
+  position: relative;
+  height: 860px;
   background-color: rgb(17, 23, 48);
   background-repeat: no-repeat, repeat;
   background-size: 1920px;
   margin-bottom: 2%;
-  position: relative;
 }
 
 .firstmessage {
+  position: absolute;
+  top: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 6.5vw;
-  padding-top: 200px;
+  font-size: calc(6vw + 30px);
+  padding-top: 170px;
   width: 100%;
   font-style: italic;
-
-  color: rgb(255, 255, 255);
+  color: rgb(241, 243, 125);
   text-align: center;
 }
 
@@ -167,31 +175,12 @@ html { scroll-behavior: smooth; }
   box-shadow: 0px 0px 50px -20px;
 }
 
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(103% + 1.3px);
-  height: 161px;
-}
-
-.wave .shape-fill {
-  fill: #ffffff;
-}
-
 .biscayne {
   padding-top: 100px;
   margin-top: -30px;
   margin-bottom: 100px;
+  position: relative;
+  background-color: white;
 }
 
 .Title {
@@ -483,6 +472,9 @@ body {
 .twitter-feed-container {
   display: flex;
   justify-content: center;
+  background-color: white;
+  position: relative;
+  height: fit-content;
 }
 
 .twitter-feed {
