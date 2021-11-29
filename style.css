@@ -115,7 +115,7 @@ html { scroll-behavior: smooth; }
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: calc(6vw + 30px);
-  padding-top: 170px;
+  padding-top: 200px;
   width: 100%;
   font-style: italic;
   color: rgb(255, 255, 255);
@@ -469,15 +469,85 @@ body {
 }
 /*=== Map Key Legend end ===*/
 
+
+
+
+
+
+.socialContainer{
+  margin-top: -100px;
+  padding-top: 100px;
+}
+
+
+.socialMedia{
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.socialButtons{
+  
+  width: 40%;
+  align-items: center;
+}
+
+
+.socialButtons button{
+  display: block;
+  width: 50%;
+  margin: 30px 25%;
+  padding: 10px;
+  border: solid 1.5px black;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s ;
+}
+
+.socialButtons button:hover{
+  padding: 20px;
+  width: 55%;
+  margin: 30px 20%;
+  cursor: pointer;
+
+}
+
+.socialButtons img{
+  width: 35%;
+
+}
+
+.socialButtons a{
+  display: block;
+  font-size: 10px;
+}
+
+.face{
+  background-color: #88b4f7;
+
+}
+
+.inst{
+  background-color: #f07b7b;
+
+}
+
+.tweet{
+  background-color: #72d8f1;
+
+}
+
+
 .twitter-feed-container {
   display: flex;
   justify-content: center;
   background-color: white;
   position: relative;
   height: fit-content;
+  width: 40%;
+  background-color: #78f7f7;
 }
 
 .twitter-feed {
-  width: 1200px;
-  height: 50px;
+  height: fit-content;
 }
