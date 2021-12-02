@@ -123,42 +123,54 @@ document.getElementById("Tempinfo").style.display = "inline";
 
 TempButton.addEventListener("click", function () {
   toggleEvent(0);
+
   removeLayers();
+  temp_arr.setStatus(true);
   addLayerTemp();
   dataPoints('temp');
 });
 
 ODOButton.addEventListener("click", function () {
   toggleEvent(1);
+
   removeLayers();
+  odo_arr.setStatus(true);
   addLayerOdo();
   dataPoints('odo');
 });
 
 pHButton.addEventListener("click", function () {
   toggleEvent(2);
+
   removeLayers();
+  ph_arr.setStatus(true);
   addLayerPh();
   dataPoints('ph');
 });
 
 SalButton.addEventListener("click", function () {
   toggleEvent(3);
+
   removeLayers();
+  salinity_arr.setStatus(true);
   addLayerSalinity();
   dataPoints('salinity');
 });
 
 ChButton.addEventListener("click", function () {
   toggleEvent(4);
+
   removeLayers();
+  chlorophyll_arr.setStatus(true);
   addLayerCholrophyll();
   dataPoints('chlorophyll');
 });
 
 TurButton.addEventListener("click", function () {
   toggleEvent(5);
+
   removeLayers();
+  turbidity_arr.setStatus(true);
   addLayerTurbidity();
   dataPoints('turbidity');
 });
@@ -314,17 +326,13 @@ function addLayerTemp()
     'source' : 'data_all',
     paint: {
       'circle-radius': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Temp °C'],
+        27,
+        2,
+        35,
         5,
-        30.0,
-        6.5,
-        31.0,
-        8,
-        32.0,
-        9.5,
-        33.0,
-        10,
       ],
       'circle-stroke-width': [
         'case',
@@ -334,17 +342,13 @@ function addLayerTemp()
         ],
       'circle-stroke-color': '#000',
       'circle-color': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Temp °C'],
-        'green',
-        30.0,
-        'red',
-        31.0,
-        'blue',
-        32.0,
-        'yellow',
-        33.0,
-        'purple',
+        27,
+        '#FA0000',
+        35,
+        '#78F7F7',
       ],
       'circle-opacity': 0.7
     },        
@@ -360,17 +364,13 @@ function addLayerPh()
     'source' : 'data_all',
     paint: {
       'circle-radius': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'pH'],
-        5,
-        7.0,
         6,
-        7.5,
-        7,
-        7.75,
-        8,
-        8.0,
-        9
+        2,
+        9,
+        5,
       ],
       'circle-stroke-width': [
         'case',
@@ -380,19 +380,15 @@ function addLayerPh()
         ],
       //'circle-stroke-color': '#000',
       'circle-color': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'pH'],
-        'red',
-        7.0,
-        'blue',
-        7.5,
-        'green',
-        7.75,
-        'yellow',
-        8.0,
-        'orange',
+        6,
+        '#FF910A', 
+        9,
+        '#1C1D4F',
       ],
-      'circle-opacity': 0.7
+      'circle-opacity': 0.6
     },        
   });
 }
@@ -406,17 +402,13 @@ function addLayerOdo()
       'source' : 'data_all',
       paint: {
         'circle-radius': [
-          'step',
+          'interpolate',
+          ['linear'],
           ['get', 'ODO mg/L'],
+          0,
+          2,
+          13,
           5,
-          2.0,
-          6,
-          3.0,
-          7,
-          4.0,
-          8,
-          5.0,
-          9
         ],
         'circle-stroke-width': [
           'case',
@@ -426,19 +418,15 @@ function addLayerOdo()
           ],
         //'circle-stroke-color': '#000',
         'circle-color': [
-          'step',
+          'interpolate',
+          ['linear'],
           ['get', 'ODO mg/L'],
-          'purple',
-          2.0,
-          'red',
-          3.0,
-          'orange',
-          4.0,
-          'pink',
-          5.0,
-          'blue',
+          0,
+          '#F7EE69', 
+          13,
+          '#65D350',
         ],
-        'circle-opacity': 0.7
+        'circle-opacity': 0.14
       },        
     });
 }
@@ -452,15 +440,13 @@ function addLayerSalinity()
     'source' : 'data_all',
     paint: {
       'circle-radius': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Sal psu'],
+        0,
+        2,
+        35,
         5,
-        25.0,
-        6.5,
-        27.0,
-        8,
-        29.0,
-        9.5,
       ],
       'circle-stroke-width': [
         'case',
@@ -470,15 +456,13 @@ function addLayerSalinity()
         ],
       'circle-stroke-color': '#000',
       'circle-color': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Sal psu'],
-        'red',
-        25.0,
-        'green',
-        27.0,
-        'blue',
-        29.0,
-        'yellow'
+        0,
+        '#F4156B', 
+        35,
+        '#9DA4D8',
       ],
       'circle-opacity': 0.7
     },        
@@ -494,13 +478,13 @@ function addLayerCholrophyll()
     'source' : 'data_all',
     paint: {
       'circle-radius': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Chlorophyll ug/L'],
+        0,
+        2,
+        650,
         5,
-        2.0,
-        3,
-        5.0,
-        4
       ],
       'circle-stroke-width': [
         'case',
@@ -510,15 +494,15 @@ function addLayerCholrophyll()
         ],
       'circle-stroke-color': '#000',
       'circle-color': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Chlorophyll ug/L'],
-        'red',
-        2.0,
-        'blue',
-        5.0,
-        'green'
+        0,
+        '#4D16DA', 
+        650,
+        '#42D01B',
       ],
-      'circle-opacity': 0.7
+      'circle-opacity': 0.37
     },        
   });
 }
@@ -532,13 +516,13 @@ function addLayerTurbidity()
     'source' : 'data_all',
     paint: {
       'circle-radius': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Turbidity FNU'],
+        0,
+        2,
+        10000,
         5,
-        10.0,
-        6,
-        20.0,
-        8
       ],
       'circle-stroke-width': [
         'case',
@@ -548,15 +532,15 @@ function addLayerTurbidity()
         ],
       'circle-stroke-color': '#000',
       'circle-color': [
-        'step',
+        'interpolate',
+        ['linear'],
         ['get', 'Turbidity FNU'],
-        'red',
-        10.0,
-        'blue',
-        20.0,
-        'orange'
+        0,
+        '#9BF40B',
+        10000,
+        '#5AEFF6',
       ],
-      'circle-opacity': 0.7
+      'circle-opacity': 0.5
     },        
   });
 }
