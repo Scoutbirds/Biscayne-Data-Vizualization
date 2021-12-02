@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Biscayne visualizations</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- icons -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>   
+
+
+  </head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+  </style>
+
+  <div class = "navbar">
+    <div class = "FIU"></div>
+    <div class="navbuttongroup">
+      <a href = "#aboutPosition" class="navbutton">About</a>
+      <a href = "#mapPosition" class="navbutton" id = "navmap" >Map</a>
+      <a href = "#socialPosition" class="navbutton">Social</a>
+    </div>
+  </div>
+
+
+  <body>
+
+
+  
+  
+    <div class="firstpage">
+      <video autoplay muted loop id="myVideo">
+        <source src="Fishkill_Website dashboard.mp4" type="video/mp4">
+      </video>
+      <div class="firstmessage">
+        <div> Biscayne Bay<br>Data Visualization </div>
+      </div>
+    </div>
+  
+
+
+
+    <div id = "aboutPosition" class="biscayne">
+      <p class="Title">BISCAYNE BAY DATA</p>
+      <div class="info">
+        <p> As long as 20 years ago, scientists in FIU's Institute of Environment were warning about the dangerous degradation of Biscayne Bay. Increased pollution, urbanization and climate change have all contributed to the precipitous decline of our iconic bay. <br>
+          <br> This August 2020, the bay experienced an obvious sign of distress. Several reports of fish kills, followed by algal blooms, were seen throughout the waterway. Our scientists responded urgently to this call. <br>
+          <br> We are aggregating all of the data and information that is being collected and about Biscayne Bay on this page. Here you can find datsets and data visualizations collected and developed by FIU scientists, as well as by partner organizations that are striving to restore Biscayne Bay to the healthy and thriving waterway it once was. We hope to make this data available to all so that anyone can help us restore, protect and fight to save our bay.
+        </p>
+      </div>
+      <p class="Title">DATA VISUALIZATIONS</p>
+      <div class="info">
+        <p> The Institute of Environment's data visualization team has developed an interactive map and application that allows users to explore the data about Biscayne Bay. </p>
+      </div>
+    </div>
+
+
+
+    <div id = "mapPosition" class="mapcontainer">
+      <div class="mapwave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+      <p class="Title"></p>
+      <div id="map">
+
+        <!-- menu container begin -->
+        <div class="container">
+          <div class="topnav">
+            <a href="#" onclick="showDataInfoBox()"><i class="fas fa-info-circle"></i></a>
+          </div>
+        </div>
+        <!-- menu container end -->
+
+        <!-- Data info console begin -->
+        <div id="dataInfoBox"> 
+          <div><strong>Date:</strong> <span id='date_info'></span></div>
+          <div><strong>Time:</strong> <span id='time_info'></span></div>
+          <div><strong>Temp:</strong> <span id='temp_info'></span></div>
+          <div><strong>odo:</strong> <span id='odo_info'></span></div>
+          <div><strong>pH:</strong> <span id='ph_info'></span></div>
+          <div><strong>Salinity:</strong> <span id='salinity_info'></span></div>
+          <div><strong>Chlorophyll:</strong> <span id='chlorophyll_info'></span></div>
+          <div><strong>Turbidity:</strong> <span id='turbidity_info'></span></div>
+        </div>
+        <!-- Data info console end -->
+
+
+      </div>
+      <div class="map-overlay top">
+        <div class="map-overlay-inner" id="map-overlay-legend"></div>
+      </div>
+      <div class="optionsContainer">
+        <button class="optionbuttons" id="TempButton" onclick="changeLegend('temp_level')">Temperature</button>
+        <button class="optionbuttons" id="ODOButton" onclick="changeLegend('odo_level')">Dissolved Oxygen</button>
+        <button class="optionbuttons" id="pHButton" onclick="changeLegend('pH_level')">pH Levels</button>
+        <button class="optionbuttons" id="SalButton" onclick="changeLegend('sal_level')">Salinity</button>
+        <button class="optionbuttons" id="ChButton" onclick="changeLegend('ch_level')">Chlorophyll</button>
+        <button class="optionbuttons" id="TurButton" onclick="changeLegend('tur_level')">Turbidity</button>
+      </div>
+    </div>
+
+
+
+    <div class="information">
+      <div class="informationBox" id="Tempinfo">
+        <p class="informationTitle">Temperature</p>
+        <p class="infoText"> 
+          Temperature is the measure of heat expressed in terms of any of several scales, usually in Fahrenheit or Celsius.
+          <br>
+          <br>
+          Marine creatures face a very high risk from the increase in temperature. These include high level of mortality, loss of breeding grounds and 
+          mass movements from species searching for favorable environmental conditions  
+          <br>
+          <br>
+          The Rising temperatures will also affect vegetation and reef-building species like corals and mangroves that protect coastlines from erosion and sea-level rise. Rising sea 
+          levels and erosion will particularly affect low-lying island countries in the Pacific Ocean, destroying housing and infrastructure and forcing people to relocate.
+         </p>
+      </div>
+      <div class="informationBox" id="pHinfo">
+        <p class="informationTitle">pH Level</p>
+        <p class="infoText"> The pH scale runs from 0 to 14, with 7 being a neutral pH. Anything higher than 7 is basic (or alkaline) and anything lower than 7 is acidic. <br>
+          <br> The ability of some fish, like clownfish, to detect predators is decreased in more acidic waters. Studies have shown that decreased pH levels also affect the ability of larval clownfish offsite link to locate suitable habitat. <br>
+          <br>
+          <a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification">Reference</a>
+        </p>
+      </div>
+      <div class="informationBox" id="ODOinfo">
+        <p class="informationTitle">Dissolved Oxygen</p>
+        <p class="infoText"> Dissolved oxygen (DO) is the amount of oxygen that is present in water. Although water molecules do contain an oxygen atom, 
+          this oxygen is not what is needed by aquatic organisms. 
+          <br/>
+          <br/>
+          Waters with less than 0.2 mg/L of dissolved oxygen are called anoxic and are unable to support most forms of life. 
+          Waters with no measurable dissolved oxygen are called hypoxic. A fundamental effect of hypoxia is the loss of energy from the Bay’s food chain. 
+          By precluding or stunting the growth of bottom-dwellers such as clams and worms, hypoxia robs their predators of an important source of nutrition.
+          <br>
+          <br>
+          <a href="https://www.vims.edu/research/topics/dead_zones/impacts/index.php">Reference</a>
+        </p>
+      </div>
+      <div class="informationBox" id="Salinityinfo">
+        <p class="informationTitle">Salinity</p>
+        <p class="infoText"> 
+          The term "salinity" refers to the concentrations of salts in water or soils. As a general guideline, it is best to maintain a salinity of 1.026. 
+          <br/>
+          <br/>
+          Salinity can affect the density of ocean water: Water that has higher salinity is denser and heavier and will sink underneath less saline, warmer water. 
+          This can affect the movement of ocean currents. It can also affect marine life, which may need to regulate its intake of saltwater.
+          <a href="https://www.thoughtco.com/salinity-definition-2291679">Reference</a>
+        </p>
+      </div>
+      <div class="informationBox" id="Chlorophyllinfo">
+        <p class="informationTitle">Chlorophyll</p>
+        <p class="infoText">
+          The concentration of chlorophyll is related to the amount of photosynthetic plankton, or phytoplankton, present in the ocean. 
+          Phytoplankton populations are influenced by climatic factors such as sea surface temperatures and winds.
+          Changes in phytoplankton populations may impact fish and other marine life, which can affect economic productivity and food availability.
+          <br />
+          <br />
+          <a href="https://data.globalchange.gov/report/indicator-ocean-chlorophyll-concentrations">Reference</a>
+        </p>
+      </div>
+      <div class="informationBox" id="Turbidityinfo">
+        <p class="informationTitle">Turbidity</p>
+        <p class="infoText"> Turbidity is the measure of relative clarity of a liquid. Often caused by particles in the water that scatter light, high turbidity gives the water a murky or cloudy look. <br />
+          <br /> High turbidity can significantly reduce the aesthetic quality of lakes and streams, having a harmful impact on recreation and tourism. <br />
+          <br />
+          <a href="https://www.pca.state.mn.us/sites/default/files/wq-iw3-21.pdf">Reference</a>
+        </p>
+      </div>
+
+      <div class="endmapWave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
+    </div>
+
+
+
+
+
+    <div id = "socialPosition" class="socialContainer">
+      <p class="Title">FOLLOW US ON SOCIAL MEDIA</p>
+      <div class="socialMedia">
+        <div class="socialButtons">
+          <button class="face" 
+            onclick="window.location.href = 'https://www.facebook.com/FIUEnvironment';">
+            <img src="https://img.icons8.com/cotton/512/000000/facebook.png"/>
+            <a href="https://icons8.com/icon/68186/facebook">Facebook icon by Icons8</a>
+          </button>
+
+          <button class="inst"
+            onclick="window.location.href = 'https://www.instagram.com/fiuenvironment/?hl=en';">
+            <img src="https://img.icons8.com/cotton/512/000000/instagram-new.png"/>
+            <a href="https://icons8.com/icon/68184/instagram">Instagram icon by Icons8</a>
+          </button>
+
+          <button class="tweet"
+            onclick="window.location.href = 
+            'https://twitter.com/FIUEnvironment?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3AFIUEnvironment%7Ctwgr%5Ee30%3D&ref_url=file%3A%2F%2F%2FC%3A%2FUsers%2FUser%2FDocuments%2FFIU%2FCapstone%25201%2FProject%2Findex.html%23socialPosition';" >
+            <img src="https://img.icons8.com/cotton/512/000000/twitter.png"/>
+            <a href="https://icons8.com/icon/68193/twitter">Twitter icon by Icons8</a>
+          </button> 
+        </div>
+
+        <div class="twitter-feed-container">
+          <div class="twitter-feed">
+            <a class="twitter-timeline" data-width="1000" data-theme="white" data-tweet-limit="3" href="https://twitter.com/FIUEnvironment?ref_src=twsrc%5Etfw">Tweets by FIUEnvironment</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
