@@ -5,26 +5,26 @@ var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/jfern075/ckt5s06110bdx17nk6tcacn53",
   center: [-80.15, 25.85], // starting position [lng, lat]
-  zoom: 12, // starting zoom
-  maxZoom: 14, // max zoom in
+  zoom: 14, // starting zoom
+  maxZoom: 15, // max zoom in
   minZoom: 11, // max zoom out
 });
 map.addControl(new mapboxgl.NavigationControl());
 //map.scrollZoom.disable(); //disables the scroll zoom function
 
-const coralGables = new mapboxgl.Marker()
-  .setLngLat([-80.26966, 25.72695])
-  .addTo(map);
+// const coralGables = new mapboxgl.Marker()
+//   .setLngLat([-80.26966, 25.72695])
+//   .addTo(map);
 
-// Buoy 2
-const northBiscayneBay = new mapboxgl.Marker()
-  .setLngLat([-80.16712, 25.86171])
-  .addTo(map);
+// // Buoy 2
+// const northBiscayneBay = new mapboxgl.Marker()
+//   .setLngLat([-80.16712, 25.86171])
+//   .addTo(map);
 
-// Buoy 3
-const littleRiver = new mapboxgl.Marker()
-  .setLngLat([-80.176921, 25.846346])
-  .addTo(map);
+// // Buoy 3
+// const littleRiver = new mapboxgl.Marker()
+//   .setLngLat([-80.176921, 25.846346])
+//   .addTo(map);
 
 //---------------------------------------------------------------------
 // Parameter Logic starts here
