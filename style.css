@@ -98,7 +98,7 @@ html { scroll-behavior: smooth; }
 }
 
 @keyframes colorchange {
-  0% {
+  30% {
     background-color: rgb(255, 204, 0);
     color: black;
     left: 0px;
@@ -111,7 +111,7 @@ html { scroll-behavior: smooth; }
     left: 200px;
     top: 0px;
   }
-  100% {
+  70% {
     color: black;
     background-color: rgb(255, 204, 0);
     left: 0px;
@@ -156,7 +156,7 @@ html { scroll-behavior: smooth; }
 .arrow
 {
   position: relative;
-  bottom: -3rem;
+  bottom: -1.2rem;
   left: 50%;
   margin-left:-25px;
   width: 50px;
